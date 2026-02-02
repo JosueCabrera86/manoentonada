@@ -51,7 +51,7 @@ function Servicios() {
           Nuestros Servicios
         </p>
       </div>
-      <section className="bg-servicios">
+      <section id="servicios" className="bg-servicios">
         {servicios.map((servicio) => (
           <Informacion
             titulo={servicio.titulo}
@@ -65,12 +65,12 @@ function Servicios() {
         ))}
       </section>
       <div className="bg-divisiones py-16 text-center">
-        <p className="gilda text-2xl text-zinc-800 italic mb-4">
+        <p className="cormorant font-bold text-4xl text-zinc-800 italic mb-4">
           ¿Tienes dudas sobre qué servicio es para ti?
         </p>
         <a
           href="#contacto"
-          className="text-emerald-900 underline-offset-4 hover:decoration-emerald-800 hover:underline transition-all"
+          className="gilda text-2xl text-emerald-900 underline-offset-4 hover:decoration-emerald-800 hover:underline transition-all"
         >
           Escríbeme y buscamos lo mejor para ti →
         </a>

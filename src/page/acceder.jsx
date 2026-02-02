@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PiEnvelopeSimple, PiLock, PiEye, PiEyeSlash } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Acceder = () => {
   const [email, setEmail] = useState("");
@@ -107,10 +108,13 @@ const Acceder = () => {
           </form>
 
           <p className="text-center mt-8 text-sm text-zinc-500">
-            ¿No tienes cuenta aún?{" "}
-            <a href="#" className="text-rose-400 font-semibold hover:underline">
+            ¿No tienes cuenta aún?
+            <Link
+              to="/#contacto"
+              className="text-rose-400 font-semibold hover:underline"
+            >
               Únete a la comunidad
-            </a>
+            </Link>
           </p>
         </div>
       </div>

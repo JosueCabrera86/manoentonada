@@ -23,7 +23,7 @@ function Hero({ imagen, titulo, subtitulo }) {
 
         <h2
           className="
-            figtree text-subtitulo mt-3
+            gilda text-subtitulo mt-3
             text-xl sm:text-2xl md:text-3xl lg:text-4xl
           "
         >

@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../Components/hero";
 import Informacion from "../Components/informacion";
 import { PiFlowerLotus } from "react-icons/pi";
+import { Link } from "react-router-dom";
 const ListaConIcono = ({ texto }) => {
   const lineas = texto.split("\n");
 
@@ -182,12 +183,14 @@ function YogaFacial() {
                 Rutina Avanzada y Rutina Masculina.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4">
-                <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300  hover:shadow-lg transform hover:-translate-y-1 active:scale-95  tracking-wider text-sm">
-                  Inicia ahora
-                </button>
+                <Link to="/#contacto">
+                  <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300  hover:shadow-lg transform hover:-translate-y-1 active:scale-95  tracking-wider text-sm">
+                    Inicia ahora
+                  </button>
+                </Link>
 
                 <p className="text-xs text-gray-900">
-                  Si ya perteneces a la comunidad,{" "}
+                  Si ya perteneces a la comunidad,
                   <a
                     href="/acceder"
                     className="underline hover:text-[#b5c7b9] transition-colors font-medium"

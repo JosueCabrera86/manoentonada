@@ -19,7 +19,10 @@ const Contacto = () => {
   };
 
   return (
-    <section className="bg-about py-16 px-4 flex flex-col items-center">
+    <section
+      id="contacto"
+      className="bg-about py-16 px-4 flex flex-col items-center"
+    >
       <h2 className="text-2xl md:text-3xl playfairbold text-center text-zinc-900 mb-10 max-w-md">
         Nos encantará escucharte y ponernos en contacto contigo
       </h2>

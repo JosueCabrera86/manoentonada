@@ -5,6 +5,7 @@ import Landig from "./page/landig";
 import YogaFacial from "./page/yogafacial";
 import Acceder from "./page/acceder";
 import Footer from "./Components/footer";
+import ScrollToHash from "./Components/scrollToHash";
 import "./index.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Landig />} />
         <Route path="/yogafacial" element={<YogaFacial />} />
