@@ -190,10 +190,10 @@ function YogaFacial() {
                 </Link>
 
                 <p className="text-xs text-gray-900">
-                  Si ya perteneces a la comunidad,
+                  Si ya perteneces a la comunidad, {""}
                   <a
                     href="/acceder"
-                    className="underline hover:text-[#b5c7b9] transition-colors font-medium"
+                    className="underline text-rose-400 hover:text-[#b5c7b9] transition-colors font-medium"
                   >
                     ingresa aquí
                   </a>
