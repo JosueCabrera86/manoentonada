@@ -48,7 +48,7 @@ function Servicios() {
     <div>
       <div className="bg-divisiones text-center mx-auto py-12 items-center">
         <p className="cormorant font-bold text-4xl mx-28 text-zinc-900 italic">
-          Nuestros Servicios
+          Servicios
         </p>
       </div>
       <section id="servicios" className="bg-servicios">
@@ -66,13 +66,13 @@ function Servicios() {
       </section>
       <div className="bg-divisiones py-16 text-center">
         <p className="cormorant font-bold text-4xl text-zinc-800 italic mb-4">
-          ¿Tienes dudas sobre qué servicio es para ti?
+          ¿Tienes dudas sobre qué servicio te conviene?
         </p>
         <a
           href="#contacto"
           className="gilda text-2xl text-emerald-900 underline-offset-4 hover:decoration-emerald-800 hover:underline transition-all"
         >
-          Escríbeme y buscamos lo mejor para ti →
+          Escríbeme y buscamos lo más adecuado en tu circunstancia actual →
         </a>
       </div>
     </div>

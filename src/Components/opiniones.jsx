@@ -3,10 +3,10 @@ import React from "react";
 const testimonials = [
   {
     id: 1,
-    imagen: "sandra",
-    name: "Sandra Erosa.",
-    role: "Terapeuta y profesora",
-    text: "Por momentos fue como tener 10 masajistas a la vez. La energía súper balanceada, manos mágicas, fuertes y a la vez con una dulzura indescriptible. Una de mis mejores experiencias definitivamente.",
+    imagen: "ariel",
+    name: "Ariel Martínez.",
+    role: "Cineasta",
+    text: "Tuve una sesión de reiki muy hermosa, que me conecto con imágenes muy profundas y me ayudo a verme a mi mismo desde un lugar de belleza y calma. Muy recomendado.",
   },
   {
     id: 2,

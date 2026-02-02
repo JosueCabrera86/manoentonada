@@ -15,10 +15,11 @@ const Acceder = () => {
   return (
     <div>
       <div
-        className="min-h-screen flex items-center justify-center px-4 py-20"
+        className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/imgmano/login.png')" }}
       >
-        <div className="bg-yogafacial backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/50 max-w-md w-full">
+        <div className="absolute inset-0 bg-black/20 " />
+        <div className="bg-yogafacial backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/50 max-w-md w-full relative z-10">
           <div className="flex flex-col items-center mb-8">
             <img
               src="imagenes/logo_manoentonadas.png"
@@ -108,7 +109,7 @@ const Acceder = () => {
           </form>
 
           <p className="text-center mt-8 text-sm text-zinc-500">
-            ¿No tienes cuenta aún?
+            ¿No tienes cuenta aún? {""}
             <Link
               to="/#contacto"
               className="text-rose-400 font-semibold hover:underline"
