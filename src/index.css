@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+body {
+  overflow-x: hidden;
+  background-color: #9999;
+}
+
+:root {
+  --color-texto: #999999;
+  --color-primario: #bba4c9;
+  --color-secundario: #7ea490;
+  --color-acento: #fcd05f;
+  --color-borde-suave: #c5c5c5;
+  --color-texto-enlace: #564766;
+  --color-texto-titulos: #0d9488;
+  --color-texto-subtitulos: #d3adea;
+  --color-texto-entresection: #1e302b;
+}
+
+@layer utilities {
+  /* ---------------- Textos ---------------- */
+  .text-texto {
+    color: var(--color-texto);
+  }
+
+  .text-primario {
+    color: var(--color-primario);
+  }
+
+  .text-secundario {
+    color: var(--color-secundario);
+  }
+  .text-enlace {
+    color: var(--color-texto-enlace);
+  }
+  .text-titulos {
+    color: var(--color-texto-titulos);
+  }
+  .text-subtitulo {
+    color: var(--color-texto-subtitulos);
+  }
+  .text-acento {
+    color: var(--color-acento);
+  }
+  .bg-divisiones {
+    background-color: #b2c8bc;
+  }
+
+  .bg-manoentonada {
+    background-color: #f4f0f7;
+  }
+
+  .bg-servicios {
+    background-color: #e4f2ec;
+  }
+
+  .bg-yogafacial {
+    background-color: #efe8f4;
+  }
+  .bg-about {
+    background-color: #dcebe4;
+  }
+  .bg-opiniones {
+    background-color: #ffffff;
+  }
+  .bg-footer {
+    background-color: #d9d9d9;
+  }
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/lora/Lora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AbrilFatface";
+  src: url("/fonts/Abril-Fatface-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair";
+  src: url("/fonts/Playfair-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair-bold";
+  src: url("/fonts/Playfair-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilda";
+  src: url("/fonts/GildaDisplay-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramont";
+  src: url("/fonts/CormorantGaramont-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+.cormorant {
+  font-family: "CormorantGaramont";
+  font-weight: 400;
+}
+.gilda {
+  font-family: "Gilda";
+  font-weight: 400;
+}
+.playfairbold {
+  font-family: "Playfair-bold";
+  font-weight: 400;
+}
+.playfair {
+  font-family: "Playfair";
+  font-weight: 400;
+}
+.fitgree {
+  font-family: "Fitgree";
+  font-weight: 400;
+}
+.lora {
+  font-family: "Lora";
+  font-weight: 400;
+}
+.abril {
+  font-family: "AbrilFatface";
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
