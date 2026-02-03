@@ -9,6 +9,7 @@ function Informacion({
   reverse = false,
   showLink = false,
   linkText = "",
+  linkUrl = "",
   onLinkClick,
 }) {
   const textOrderClass = reverse ? "md:order-2" : "md:order-1";
@@ -38,9 +39,12 @@ function Informacion({
               onClick={onLinkClick}
               className="gilda text-lg italic mx-3.5 text-[#4B5320] hover:text-emerald-800 flex items-center gap-2 group transition-all duration-300"
             >
-              <span className="border-b border-transparent group-hover:border-emerald-800 pb-0.5">
+              <a
+                href={linkUrl}
+                className="border-b border-transparent group-hover:border-emerald-800 pb-0.5"
+              >
                 {linkText} →
-              </span>
+              </a>
             </button>
           </div>
         )}

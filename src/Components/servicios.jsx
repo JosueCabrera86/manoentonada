@@ -12,6 +12,7 @@ function Servicios() {
       reverse: true,
       showLink: true,
       linkText: "Reserva un momento para ti",
+      url: "#contacto",
     },
     {
       titulo: "Reiki",
@@ -22,6 +23,7 @@ function Servicios() {
       reverse: false,
       showLink: true,
       linkText: "Armoniza tu energía",
+      url: "#contacto",
     },
     {
       titulo: "Registros Akashicos",
@@ -32,6 +34,7 @@ function Servicios() {
       reverse: true,
       showLink: true,
       linkText: "Consulta tus registros",
+      url: "#contacto",
     },
     {
       titulo: "Yoga Facial",
@@ -42,6 +45,7 @@ function Servicios() {
       reverse: false,
       showLink: true,
       linkText: "Quiero saber más",
+      url: "/yogafacial",
     },
   ];
   return (
@@ -61,6 +65,7 @@ function Servicios() {
             reverse={servicio.reverse}
             showLink={servicio.showLink}
             linkText={servicio.linkText}
+            linkUrl={servicio.url}
           />
         ))}
       </section>
