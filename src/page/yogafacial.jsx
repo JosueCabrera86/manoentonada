@@ -80,7 +80,7 @@ function YogaFacial() {
       reverse: true,
     },
     {
-      subtitulo: "DIFERENCIACIÓN Y PROPÓSITO",
+      subtitulo: "Diferenciación y propósito",
       texto:
         "La práctica aborda el cuidado general de la cabeza y el rostro en rutinas de ejercicio, enfatizando la conciencia postural preventiva, la observación amorosa y la conexión entre emociones y gestos faciales. Busca recordar la belleza única que reside en cada ser humano, más allá de cánones impuestos. Es una herramienta adaptable para cualquier momento de la vida, promoviendo la introspección y la aceptación o el cambio, impactando positivamente tanto a nivel individual como comunitario.",
       imagen: "yogaf3",
