@@ -7,7 +7,7 @@ function Servicios() {
       titulo: "Masajes",
       subtitulo: "El Arte de Sanar con el Tacto",
       texto:
-        "En Mano Entonada, entendemos el masaje como el primer paso hacia la materialización del bienestar. A través de nuestras manos, canalizamos la energía necesaria para liberar tensiones físicas y emocionales, permitiendo que el cuerpo recupere su equilibrio natural. Es una invitación a detenerte y permitir que la energía transformadora actúe sobre tu cuerpo, convirtiendo cada sesión en un ritual de sanación profunda y renovación vital.",
+        "A través de nuestras manos, canalizamos la energía necesaria para liberar tensiones físicas y emocionales, permitiendo que el cuerpo recupere su equilibrio natural. Es una invitación a detenerte y permitir que la energía transformadora actúe sobre tu cuerpo, convirtiendo cada sesión en un ritual de sanación profunda y renovación vital.",
       imagen: "masajes",
       reverse: true,
       showLink: true,
@@ -40,7 +40,7 @@ function Servicios() {
       titulo: "Yoga Facial",
       subtitulo: "Cuidado y bienestar consciente",
       texto:
-        "El Yoga Facial en Mano Entonada es mucho más que estética; es la expresión de la salud interna reflejada en el rostro. A través de ejercicios conscientes y el uso de nuestras propias manos como herramientas de cambio, liberamos el estrés acumulado en los músculos faciales. Es una práctica transformadora, honrando el templo que habitas y permitiendo que tu luz interior brille con una frescura renovada y natural.",
+        "A través de ejercicios conscientes y el uso de nuestras propias manos como herramientas de cambio, liberamos el estrés acumulado en los músculos faciales. Es una práctica transformadora, honrando el templo que habitas y permitiendo que tu luz interior brille con una frescura renovada y natural, es mucho más que estética, es la expresión de la salud interna reflejada en el rostro.",
       imagen: "yogaf",
       reverse: false,
       showLink: true,
@@ -71,13 +71,13 @@ function Servicios() {
       </section>
       <div className="bg-divisiones py-16 text-center">
         <p className="cormorant font-bold text-4xl text-zinc-800 italic mb-4">
-          ¿Tienes dudas sobre qué servicio te conviene?
+          ¿Dudas sobre qué servicio es conveniente?
         </p>
         <a
           href="#contacto"
           className="gilda text-2xl text-emerald-900 underline-offset-4 hover:decoration-emerald-800 hover:underline transition-all"
         >
-          Escríbeme y buscamos lo más adecuado en tu circunstancia actual →
+          Escribe para encontrar lo más adecuado a tu circunstancia actual →
         </a>
       </div>
     </div>

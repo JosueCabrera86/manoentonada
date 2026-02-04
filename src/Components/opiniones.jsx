@@ -4,23 +4,23 @@ const testimonials = [
   {
     id: 1,
     imagen: "ariel",
-    name: "Ariel Martínez.",
+    name: "Ariel Martínez Herrera.",
     role: "Cineasta",
-    text: "Tuve una sesión de reiki muy hermosa, que me conecto con imágenes muy profundas y me ayudo a verme a mi mismo desde un lugar de belleza y calma. Muy recomendado.",
+    text: "Tuve una sesión de reiki muy hermosa, que me conectó con imágenes muy profundas y me ayudó a verme a mi mismo desde un lugar de belleza y calma. Muy recomendado.",
   },
   {
     id: 2,
-    name: "Andrea Fernández",
+    name: "Andrea Fernández Harispe",
     imagen: "andrea",
     role: "Masoterapeuta",
-    text: "Un viaje  HERMOSO hacía uno mismo...un espacio y un momento para soltar la mente... y simplemente estar allí PRESENTE en la conexión cuerpo-corazón. Muy recomendabe!!!! Yo me entrego a los entonados masajes.",
+    text: "Un viaje  HERMOSO hacía uno mismo...un espacio y un momento para soltar la mente... y simplemente estar allí PRESENTE en la conexión cuerpo-corazón. Muy recomendable!!!! Yo me entrego a los entonados masajes.",
   },
   {
     id: 3,
     name: "Nicté-Ha Otero",
     imagen: "nicteha",
     role: "Terapeuta Holística",
-    text: "Estoy muy contenta de haberme dado la oportunidad de iniciar con Yoga facial. Durante estás semanas he experimentado un gran cambio en mi cara, lo cual me ha ayudado a sentirme mejor conmigo misma, pues desde el 2019 sufrí de una parálisis facial, intenté muchas cosas, pero hasta ahora es que pude experimentar los cambios y comprender la razón por la que lo demás no me funcionó. Agradezco mucho el entusiasmo y la entrega para compartir sus conocimientos. Mil gracias 🙏🏼💜",
+    text: "Estoy muy contenta de haberme dado la oportunidad de iniciar con Yoga facial. Durante estas semanas he experimentado un gran cambio en mi cara, lo cual me ha ayudado a sentirme mejor conmigo misma, pues desde el 2019 sufrí de parálisis facial. Intenté muchas cosas, pero hasta ahora es que pude experimentar los cambios y comprender la razón por la que lo demás no me había funcionado. Agradezco mucho el entusiasmo y la entrega para compartir sus conocimientos. Mil gracias 🙏🏼💜",
   },
 ];
 

@@ -58,7 +58,7 @@ function Informacion({
           <img
             src={`/imgmano/${imagen}.png`}
             alt={`Imagen de ${imagen}`}
-            className="w-full h-full object-full shadow-lg"
+            className="w-full h-full object-cover shadow-lg"
           />
           <div className="absolute inset-0 bg-white/15 z-10" />
         </div>

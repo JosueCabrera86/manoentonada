@@ -7,6 +7,9 @@ import Acceder from "./page/acceder";
 import Footer from "./Components/footer";
 import ScrollToHash from "./Components/scrollToHash";
 import "./index.css";
+import Dashboard from "./page/admin/dashboard";
+import Panel from "./page/admin/panel";
+import Suscriptores from "./page/suscriptores";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,6 +22,9 @@ function App() {
         <Route path="/" element={<Landig />} />
         <Route path="/yogafacial" element={<YogaFacial />} />
         <Route path="/acceder" element={<Acceder />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/panel" element={<Panel />} />
+        <Route path="/suscriptores" element={<Suscriptores />} />
       </Routes>
       <Footer />
     </>
