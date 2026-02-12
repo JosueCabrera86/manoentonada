@@ -4,6 +4,17 @@ import Informacion from "./informacion";
 function Servicios() {
   const servicios = [
     {
+      titulo: "Yoga Facial",
+      subtitulo: "Redescubre tu belleza natural a través de las manos",
+      texto:
+        "A través de ejercicios conscientes y el uso de nuestras propias manos como herramientas de cambio, liberamos el estrés acumulado en los músculos faciales. Es una práctica transformadora, honrando el templo que habitas y permitiendo que tu luz interior brille con una frescura renovada y natural, es mucho más que estética, es la expresión de la salud interna reflejada en el rostro.",
+      imagen: "yogaf",
+      reverse: false,
+      showLink: true,
+      linkText: "Quiero saber más",
+      url: "/yogafacial",
+    },
+    {
       titulo: "Masajes",
       subtitulo: "El Arte de Sanar con el Tacto",
       texto:
@@ -35,17 +46,6 @@ function Servicios() {
       showLink: true,
       linkText: "Consulta tus registros",
       url: "#contacto",
-    },
-    {
-      titulo: "Yoga Facial",
-      subtitulo: "Cuidado y bienestar consciente",
-      texto:
-        "A través de ejercicios conscientes y el uso de nuestras propias manos como herramientas de cambio, liberamos el estrés acumulado en los músculos faciales. Es una práctica transformadora, honrando el templo que habitas y permitiendo que tu luz interior brille con una frescura renovada y natural, es mucho más que estética, es la expresión de la salud interna reflejada en el rostro.",
-      imagen: "yogaf",
-      reverse: false,
-      showLink: true,
-      linkText: "Quiero saber más",
-      url: "/yogafacial",
     },
   ];
   return (

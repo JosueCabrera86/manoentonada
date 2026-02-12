@@ -14,15 +14,12 @@ import { useNavigate, Link } from "react-router-dom";
 
 function Panel() {
   const navigate = useNavigate();
-
-  // --- ESTADOS ---
   const [modal, setModal] = useState(null);
   const [usuarios, setUsuarios] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [categoria, setCategoria] = useState(null);
-  const [disciplina, setDisciplina] = useState("");
   const [password, setPassword] = useState("");
   const [rol, setRol] = useState("");
   const [error, setError] = useState("");
@@ -30,16 +27,13 @@ function Panel() {
   const [showPassword, setShowPassword] = useState(false);
   const [applyCategoria, setApplyCategoria] = useState(false);
   const [currentValues, setCurrentValues] = useState({});
-
   const [session, setSession] = useState(null);
   const [loadingSession, setLoadingSession] = useState(true);
 
-  // --- LÓGICA DE LIMPIEZA ---
   const resetForm = () => {
     setNombre("");
     setEmail("");
     setCategoria(null);
-    setDisciplina("");
     setPassword("");
     setRol("");
     setError("");
@@ -48,11 +42,18 @@ function Panel() {
     setCurrentValues({});
   };
 
-  // !!! AQUÍ DEFINIRÁS SUPABASE DESPUÉS !!!
+  // -------------------- SESSION --------------------
   useEffect(() => {
-    // Simulación de carga de sesión para que el front no se rompa ahora
-    setLoadingSession(false);
-    // setSession({ access_token: "token_temporal" }); // Descomenta esto para ver el panel sin Supabase
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+      setLoadingSession(false);
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_e, s) =>
+      setSession(s),
+    );
+
+    return () => listener.subscription.unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -61,23 +62,33 @@ function Panel() {
 
   const fetchUsuarios = async () => {
     try {
-      if (!session?.access_token) return;
-      const resp = await fetch("https://backendlda.onrender.com/admin/users", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${session.access_token}`,
+      if (!session || !session.access_token) {
+        setError("No hay sesión activa. Por favor inicia sesión.");
+        return;
+      }
+
+      const resp = await fetch(
+        "https://backendmanoentonada.onrender.com/admin/users",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${session.access_token}`,
+          },
         },
-      });
+      );
+
       if (!resp.ok) throw new Error("Error cargando usuarios");
+
       const data = await resp.json();
       setUsuarios(data || []);
+      console.log("USER FRONT:", data);
     } catch (err) {
       setError(err.message);
     }
   };
 
-  // --- INTERACCIONES ---
+  // -------------------- SELECCIÓN --------------------
   const toggleSeleccionado = (authId) => {
     setSeleccionados((prev) =>
       prev.includes(authId)
@@ -85,24 +96,118 @@ function Panel() {
         : [...prev, authId],
     );
   };
-
   const handleRowClick = (user) => {
     if (seleccionados.length > 1) return;
     setSeleccionados([user.auth_id]);
     setCurrentValues(user);
+
+    setNombre("");
+    setCategoria(null);
+    setDisciplina("");
+
     setModal("editar");
   };
 
+  // -------------------- SUBMIT --------------------
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // ... tu lógica de fetch se mantiene igual ...
-    setLoading(false);
-    setModal(null);
+    setError("");
+
+    try {
+      let url = "";
+      let method = "";
+      let body = {};
+
+      if (modal === "agregar") {
+        url = "https://backendmanoentonada.onrender.com/users";
+        method = "POST";
+        body = {
+          email,
+          password,
+          name: nombre,
+          rol,
+          categoria: categoria === null ? null : parseInt(categoria, 10),
+          disciplina,
+        };
+      }
+
+      if (modal === "editar") {
+        url = "https://backendmanoentonada.onrender.com/users";
+        method = "PATCH";
+
+        body = {
+          id: currentValues.auth_id,
+        };
+
+        if (nombre && nombre !== currentValues.name) {
+          body.name = nombre;
+        }
+
+        if (categoria !== null && categoria !== currentValues.categoria) {
+          body.categoria = categoria;
+        }
+
+        if (disciplina && disciplina !== currentValues.disciplina) {
+          body.disciplina = disciplina;
+        }
+
+        if (password) {
+          body.password = password;
+        }
+      }
+
+      if (modal === "editar_masa" && applyCategoria && categoria !== null) {
+        url = "https://backendmanoentonada.onrender.com/users/multiple";
+        method = "PATCH";
+        body = {
+          ids: seleccionados,
+          categoria: parseInt(categoria, 10),
+        };
+      }
+
+      if (modal === "borrar") {
+        if (!currentValues?.auth_id) {
+          throw new Error("Usuario no válido");
+        }
+
+        url = `https://backendmanoentonada.onrender.com/users/${currentValues.auth_id}`;
+        method = "DELETE";
+      }
+
+      const resp = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        body: modal !== "borrar" ? JSON.stringify(body) : undefined,
+      });
+
+      if (!resp.ok) {
+        const data = await resp.json().catch(() => ({}));
+        const message =
+          typeof data?.error === "string"
+            ? data.error
+            : data?.message || "Error en la acción";
+
+        throw new Error(message);
+      }
+
+      await fetchUsuarios();
+      resetForm();
+      setModal(null);
+      setSeleccionados([]);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleLogout = () => {
-    // supabase.auth.signOut();
+  // -------------------- LOGOUT --------------------
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     navigate("/");
   };
 

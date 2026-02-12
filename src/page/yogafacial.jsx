@@ -42,7 +42,7 @@ function YogaFacial() {
     {
       imagen: "yogafacial",
       titulo: "Yoga Facial",
-      subtitulo: "El camino hacia tu bienestar",
+      subtitulo: "Cuidado y bienestar consciente",
     },
   ];
   const datos = [
