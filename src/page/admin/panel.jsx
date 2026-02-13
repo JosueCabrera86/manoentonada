@@ -11,6 +11,7 @@ import {
   PiPlusCircle,
 } from "react-icons/pi";
 import { useNavigate, Link } from "react-router-dom";
+import { supabase } from "../../Components/client/supabaseClient";
 
 function Panel() {
   const navigate = useNavigate();
@@ -234,7 +235,7 @@ function Panel() {
                 Panel de Administración
               </h2>
               <p className="cormorant text-lg mb-6">
-                Debes iniciar sesión para gestionar la comunidad.
+                Inicia sesión para gestionar la comunidad.
               </p>
               <Link to="/dashboard">
                 <button className="px-8 py-3 bg-[#9eb0a2] text-white rounded-full hover:bg-[#8da092] transition shadow-md">

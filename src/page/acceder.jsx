@@ -1,15 +1,86 @@
 import React, { useState } from "react";
 import { PiEnvelopeSimple, PiLock, PiEye, PiEyeSlash } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { supabase } from "../Components/client/supabaseClient";
 
 const Acceder = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const Loader = () => (
+    <div className="relative w-full h-1 bg-gray-300 rounded overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0d9488] to-transparent animate-[progress_1s_ease-in-out_infinite]"></div>
+      <style>
+        {`
+        @keyframes progress {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(0%); }
+          100% { transform: translateX(100%); }
+        }
+      `}
+      </style>
+    </div>
+  );
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Accediendo con:", { email, password });
+    setError("");
+
+    if (!email.trim() || !password) {
+      setError("Por favor ingresa email y contraseña");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // 1️⃣ LOGIN
+      const { data: authData, error: authError } =
+        await supabase.auth.signInWithPassword({
+          email: email.trim(),
+          password,
+        });
+
+      if (authError) {
+        setError("Email o contraseña incorrectos.");
+        return;
+      }
+
+      const authUser = authData.user;
+
+      // Guardar token
+      sessionStorage.setItem("token", authData.session.access_token);
+
+      // 2️⃣ OBTENER PERFIL
+      const { data: profile, error: profileError } = await supabase
+        .from("users")
+        .select("*")
+        .eq("auth_id", authUser.id)
+        .single();
+
+      if (profileError || !profile) {
+        setError("No se pudo obtener el perfil del usuario.");
+        return;
+      }
+
+      // 3️⃣ Guardar datos del usuario
+      sessionStorage.setItem("user_id", profile.id);
+      sessionStorage.setItem("user_email", authUser.email);
+      sessionStorage.setItem("user_categoria", profile.categoria);
+      sessionStorage.setItem("user_rol", profile.rol);
+
+      // 4️⃣ Redirección única
+      navigate("/suscriptores");
+    } catch (err) {
+      console.error("Error login:", err);
+      setError("Reintenta por favor.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
