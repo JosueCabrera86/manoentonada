@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PiEnvelopeSimple, PiLock, PiEye, PiEyeSlash } from "react-icons/pi";
+import { supabase } from "../../Components/client/supabaseClient";
 
 function Dashboard() {
   const [email, setEmail] = useState("");
@@ -57,7 +58,7 @@ function Dashboard() {
       }
     } catch (err) {
       console.error("Error al iniciar sesión:", err);
-      setError("Error del servidor. Intenta más tarde.");
+      setError("Intenta nuevamente.");
     } finally {
       setLoading(false);
     }

@@ -3,6 +3,7 @@ import RutinasModal from "../Components/suscriptores/rutinas";
 import MasajesModal from "../Components/suscriptores/masajes";
 import ClasesExtraModal from "../Components/suscriptores/clasesExtra";
 import { useNavigate } from "react-router-dom";
+import { PiFlowerLotus } from "react-icons/pi";
 
 function Suscriptores() {
   const [material, setMaterial] = useState({
@@ -52,33 +53,34 @@ function Suscriptores() {
     window.scrollTo(0, 0);
   };
   return (
-    <div className="mx-auto container px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto container px-4 sm:px-6 lg:px-8 mb-4">
       <div className="relative">
         <img
-          src="/imgbienestar/faceyoga1.jpg"
+          src="/imagenes/Material-adicional.jpg"
           alt="Material adicional"
           className="w-full h-[700px] sm:h-[400px] md:h-[600px] object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-violet-400 drop-shadow-lg">
-            MATERIAL ADICIONAL
+          <h1 className="text-3xl sm:text-4xl md:text-6xl playfairbold text-titulos drop-shadow-lg">
+            Material Adicional
           </h1>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl text-fuchsia-300 font-semibold drop-shadow-md">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl gilda text-subtitulo font-semibold drop-shadow-md">
             Yoga Facial
           </h2>
         </div>
       </div>
-
-      <p className="flex flex-col sm:flex-row justify-center items-center gap-3 text-lg sm:text-xl text-center text-nuestro-lila mt-6 sm:mt-8">
-        <GiAbstract047 className="text-xl sm:text-2xl" /> ¡Hola, nos da mucho
-        gusto que estés aquí! Te damos la bienvenida a este espacio que ha sido
-        creado para que puedas dar continuidad a tus sesiones de Yoga Facial.
-        <GiAbstract047 className="text-xl sm:text-2xl" />
-      </p>
-
+      <section className="bg-divisiones">
+        <p className="flex flex-col sm:flex-row justify-center items-center gap-3 text-lg sm:text-xl text-center playfairbold mt-6 sm:mt-8">
+          <PiFlowerLotus className="text-4xl  text-rose-400" /> ¡Hola, nos da
+          mucho gusto que estés aquí! Te damos la bienvenida a este espacio que
+          ha sido creado para que puedas dar continuidad a tus sesiones de Yoga
+          Facial.
+          <PiFlowerLotus className="text-4xl  text-rose-400" />
+        </p>
+      </section>
       <div className="flex flex-col sm:flex-row justify-center items-center mt-6 sm:mt-8 gap-6 flex-wrap">
         {(() => {
           const baseMasajes = [
@@ -249,7 +251,7 @@ function Suscriptores() {
 
         <div className="flex justify-center">
           <img
-            src="/imgsuscriptores/Face-yogacolibrí.jpg"
+            src="/imagenes/Face-yogacolibrí.jpg"
             alt="Foto portal colibrí"
             className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-lg"
           />
@@ -259,7 +261,7 @@ function Suscriptores() {
       <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-6 items-start">
         <div className="flex justify-center">
           <img
-            src="/imgsuscriptores/Face-yogacolibrí1.jpg"
+            src="/imagenes/Face-yogacolibrí1.jpg"
             alt="Foto portal colibrí"
             className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-lg"
           />
@@ -267,29 +269,29 @@ function Suscriptores() {
 
         <div className="relative p-4 rounded-lg bg-white/10 mt-6 md:mt-12 overflow-visible pb-20 md:pb-24">
           <img
-            src="/imgbienestar/logomano.png"
+            src="/imagenes/logomano.png"
             alt="logo fondo"
             className="absolute bottom-0 sm:bottom-6 md:bottom-[-60px] left-1/2 transform -translate-x-1/2 w-64 sm:w-72 md:w-80 h-auto opacity-30 pointer-events-none select-none"
           />
 
-          <p className="relative z-10 text-2xl font-bold sm:text-xl text-justify">
+          <p className="relative z-10 text-2xl gilda sm:text-xl text-justify">
             Recuerda siempre comenzar con uno de los siguientes masajes:
           </p>
-          <ul className="list-disc pl-5 mt-3 text-xl sm:text-lg relative z-10">
+          <ul className="cormorant list-disc pl-5 mt-3 text-xl sm:text-lg  z-10">
             <li className="flex items-center">
-              <GiAbstract047 className="text-lg sm:text-xl text-nuestro-lila mr-2" />{" "}
+              <PiFlowerLotus className="text-lg sm:text-xl text-rose-400 mr-2" />{" "}
               Masaje de reseteo facial.
             </li>
             <li className="flex items-center">
-              <GiAbstract047 className="text-lg sm:text-xl text-nuestro-lila mr-2" />{" "}
+              <PiFlowerLotus className="text-lg sm:text-xl text-rose-400 mr-2" />{" "}
               Masaje periférico.
             </li>
             <li className="flex items-center">
-              <GiAbstract047 className="text-lg sm:text-xl text-nuestro-lila mr-2" />{" "}
+              <PiFlowerLotus className="text-lg sm:text-xl text-rose-400 mr-2" />{" "}
               Masaje de preparación facial.
             </li>
             <li className="flex items-center">
-              <GiAbstract047 className="text-lg sm:text-xl text-nuestro-lila mr-2" />{" "}
+              <PiFlowerLotus className="text-lg sm:text-xl text-rose-400 mr-2" />{" "}
               Masaje con guasha.
             </li>
           </ul>
