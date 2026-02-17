@@ -20,7 +20,7 @@ function Informacion({
       <div
         className={`p-4 mx-3 flex flex-col justify-center  ${textOrderClass}`}
       >
-        <h1 className="playfairbold mx-3.5 font-semibold text-titulos text-3xl">
+        <h1 className="playfairbold mx-3.5 font-semibold text-titulos text-3xl mb-4">
           {titulo}
         </h1>
         {subtitulo && (

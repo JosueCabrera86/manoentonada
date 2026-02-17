@@ -3,6 +3,7 @@ import Hero from "../Components/hero";
 import Informacion from "../Components/informacion";
 import { PiFlowerLotus } from "react-icons/pi";
 import { Link } from "react-router-dom";
+
 const ListaConIcono = ({ texto }) => {
   const lineas = texto.split("\n");
 

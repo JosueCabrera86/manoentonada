@@ -16,30 +16,29 @@ function RutinasModal({ material, nivelUsuario = 20 }) {
         "Frente-y-ojos-1.png",
         "Frente-y-ojos-2.png",
         "Frente-y-ojos-3.png",
-        "Frente-y-ojos-4.png",
       ],
-      img: "/imgminis/miniyf/1_frenteyojos_paso.png",
+      img: "/imgminis/1_frenteyojos_paso.png",
     },
     {
       categoria: 6,
       tipo: "video",
       title: "1. Frente y ojos",
       video: "https://www.youtube.com/embed/xW4U1i4XxJg",
-      img: "/imgminis/miniyf/1_frenteyojos_rutina.png",
+      img: "/imgminis/1_frenteyojos_rutina.png",
     },
     {
       categoria: 7,
       tipo: "pdf",
       title: "2. Una rutina para ojos",
       pdf: ["Ojos-1.png", "Ojos-2.png", "Ojos-3.png"],
-      img: "/imgminis/miniyf/2_ojos_paso.png",
+      img: "/imgminis/2_ojos_paso.png",
     },
     {
       categoria: 8,
       tipo: "video",
       title: "2. Una rutina para ojos",
       video: "https://www.youtube.com/embed/6tkfc-pobr0",
-      img: "/imgminis/miniyf/2_ojos_rutina.png",
+      img: "/imgminis/2_ojos_rutina.png",
     },
     {
       categoria: 9,
@@ -50,14 +49,14 @@ function RutinasModal({ material, nivelUsuario = 20 }) {
         "Linea-Facial-y-Cuello-2.png",
         "Linea-Facial-y-Cuello-3.png",
       ],
-      img: "/imgminis/miniyf/3_lineafacialycuello_paso.png",
+      img: "/imgminis/3_lineafacialycuello_paso.png",
     },
     {
       categoria: 10,
       tipo: "video",
       title: "3. Línea facial y cuello",
       video: "https://www.youtube.com/embed/Q6pmDrXMROs",
-      img: "/imgminis/miniyf/3_lineafacialycuello_rutina.png",
+      img: "/imgminis/3_lineafacialycuello_rutina.png",
     },
     {
       categoria: 14,
@@ -67,16 +66,15 @@ function RutinasModal({ material, nivelUsuario = 20 }) {
         "Nariz-Labios-y-Nasolabiales-1.png",
         "Nariz-Labios-y-Nasolabiales-2.png",
         "Nariz-Labios-y-Nasolabiales-3.png",
-        "Frente-y-ojos-4.png",
       ],
-      img: "/imgminis/miniyf/4_narizlabiosynasolabiales_paso.png",
+      img: "/imgminis/4_narizlabiosynasolabiales_paso.png",
     },
     {
       categoria: 15,
       tipo: "video",
       title: "4. Nariz, labios y nasolabiales",
       video: "https://www.youtube.com/embed/v0nMSc7bDEI",
-      img: "/imgminis/miniyf/4_narizlabiosynasolabiales_rutina.png",
+      img: "/imgminis/4_narizlabiosynasolabiales_rutina.png",
     },
     {
       categoria: 17,
@@ -86,23 +84,22 @@ function RutinasModal({ material, nivelUsuario = 20 }) {
         "Pomulos-y-Sonrisa-1.png",
         "Pomulos-y-Sonrisa-2.png",
         "Pomulos-y-Sonrisa-3.png",
-        "Frente-y-ojos-4.png",
       ],
-      img: "/imgminis/miniyf/5_pomulosysonrisa_paso.png",
+      img: "/imgminis/5_pomulosysonrisa_paso.png",
     },
     {
       categoria: 18,
       tipo: "video",
       title: "5. Pómulos y sonrisa",
       video: "https://www.youtube.com/embed/uPnft5T1_Ps",
-      img: "/imgminis/miniyf/5_pomulosysonrisa_paso.png",
+      img: "/imgminis/5_pomulosysonrisa.png",
     },
     {
       categoria: 21,
       tipo: "video",
       title: "6. Rutina avanzada",
       video: "https://www.youtube.com/embed/BoCZ0nkv58M",
-      img: "/imgminis/miniyf/7_rutina_avanzada.png",
+      img: "/imgminis/7_rutina_avanzada.png",
     },
   ];
 
@@ -141,7 +138,7 @@ function RutinasModal({ material, nivelUsuario = 20 }) {
               alt={rutina.title}
               className="w-full h-40 object-cover"
             />
-            <div className="p-2 text-center text-lg font-medium text-sky-700">
+            <div className="p-2 text-center text-lg playfairbold text-titulos">
               {rutina.title}
             </div>
           </motion.div>

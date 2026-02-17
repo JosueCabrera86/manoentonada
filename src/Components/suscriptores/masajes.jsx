@@ -13,49 +13,49 @@ function MasajesModal({ material, nivelUsuario = 20 }) {
       tipo: "video",
       title: "Masaje periférico",
       url: "https://www.youtube.com/embed/SJ20LZe3RxI",
-      img: "/imgminis/miniyf/1_periferico_masaje.png",
+      img: "/imgminis/1_periferico_masaje.png",
     },
     {
       categoria: 3,
       tipo: "video",
       title: "Masaje de reseteo facial",
       url: "https://www.youtube.com/embed/sG2qqWv9T9Y",
-      img: "/imgminis/miniyf/2_reseteofacial_masaje.png",
+      img: "/imgminis/2_reseteofacial_masaje.png",
     },
     {
       categoria: 4,
       tipo: "video",
       title: "Masaje de preparación facial",
       url: "https://www.youtube.com/embed/OUBvlbA8_Fk",
-      img: "/imgminis/miniyf/3_preparacionfacial_masaje.png",
+      img: "/imgminis/3_preparacionfacial_masaje.png",
     },
     {
       categoria: 9,
       tipo: "video",
       title: "Masaje con guasha",
       url: "https://www.youtube.com/embed/jPAeiOlCrv0",
-      img: "/imgminis/miniyf/4_guasha_masaje.png",
+      img: "/imgminis/4_guasha_masaje.png",
     },
     {
       categoria: 13,
       tipo: "video",
       title: "Masaje relajante",
       url: "https://www.youtube.com/embed/ke_h99NelDM",
-      img: "/imgminis/miniyf/5_relajante_masaje.png",
+      img: "/imgminis/5_relajante_masaje.png",
     },
     {
       categoria: 19,
       tipo: "pdf",
       title: "Masaje de acupresión",
       pdf: ["Acupresion-avanzados.png"],
-      img: "/imgminis/miniyf/2_infografiaacupresion_masaje.png",
+      img: "/imgminis/2_infografiaacupresion_masaje.png",
     },
     {
       categoria: 20,
       tipo: "video",
       title: "6. Acupresión avanzada",
       video: "https://www.youtube.com/embed/BoCZ0nkv58M",
-      img: "/imgminis/miniyf/6_acupresion_masaje.png",
+      img: "/imgminis/6_acupresion_masaje.png",
     },
   ];
 
@@ -95,7 +95,7 @@ function MasajesModal({ material, nivelUsuario = 20 }) {
               className="w-full h-40 object-cover"
             />
 
-            <div className="p-2 text-center text-lg font-medium text-sky-700">
+            <div className="p-2 text-center text-lg playfairbold text-titulos">
               {m.title}
             </div>
           </motion.div>

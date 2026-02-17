@@ -18,44 +18,43 @@ function ClasesExtraModal({ material, nivelUsuario = 20 }) {
         "info10.png",
         "info11.png",
         "info12.png",
-        "Frente-y-ojos-4.png",
       ],
-      img: "/imgminis/miniyf/1_introductoria_infografia.png",
+      img: "/imgminis/1_introductoria_infografia.png",
     },
     {
       categoria: 1,
       tipo: "video",
       title: "Clase 1. Introductoria",
       video: "https://www.youtube.com/embed/u2OEmNMYTCw",
-      img: "/imgminis/miniyf/1_introductoria_clase.png",
+      img: "/imgminis/1_introductoria_clase.png",
     },
     {
       categoria: 4,
       tipo: "video",
       title: "Clase 2. Masaje y rutina con Sofía",
       video: "https://www.youtube.com/embed/K4bLW4_-w9Q",
-      img: "/imgminis/miniyf/2_masajeyrutina_clase.png",
+      img: "/imgminis/2_masajeyrutina_clase.png",
     },
     {
       categoria: 10,
       tipo: "video",
       title: "Clase 3. Masaje y rutina con Blanca",
       video: "https://www.youtube.com/embed/gYRVZobHOeE",
-      img: "/imgminis/miniyf/3_masajeyrutna_clase.png",
+      img: "/imgminis/3_masajeyrutna_clase.png",
     },
     {
       categoria: 16,
       tipo: "video",
       title: "Clase 4. Masaje y rutina con Adriana",
       video: "https://www.youtube.com/embed/iBkVM0zyLRc",
-      img: "/imgminis/miniyf/4_masajeyrutina_clase.png",
+      img: "/imgminis/4_masajeyrutina_clase.png",
     },
     {
       categoria: 21,
       tipo: "video",
       title: "Clase 5. Clase especial de Kinesiotape",
       video: "https://www.youtube.com/embed/iozMsfyRchA",
-      img: "/imgminis/miniyf/5_kinesiotape_clase.png",
+      img: "/imgminis/5_kinesiotape_clase.png",
     },
   ];
 
@@ -96,7 +95,7 @@ function ClasesExtraModal({ material, nivelUsuario = 20 }) {
               alt={rutina.title}
               className="w-full h-40 object-cover"
             />
-            <div className="p-2 text-center text-lg font-medium text-sky-700">
+            <div className="p-2 text-center text-lg playfairbold text-titulos">
               {rutina.title}
             </div>
           </motion.div>
