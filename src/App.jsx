@@ -10,6 +10,7 @@ import "./index.css";
 import Dashboard from "./page/admin/dashboard";
 import Panel from "./page/admin/panel";
 import Suscriptores from "./page/suscriptores";
+import ProtectedRoute from "./Components/protectedRoute";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,11 +21,31 @@ function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<Landig />} />
-        <Route path="/yogafacial" element={<YogaFacial />} />
+        <Route
+          path="/suscriptores"
+          element={
+            <ProtectedRoute>
+              <Suscriptores />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/acceder" element={<Acceder />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/panel" element={<Panel />} />
-        <Route path="/suscriptores" element={<Suscriptores />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/panel"
+          element={
+            <ProtectedRoute>
+              <Panel />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <Footer />
     </>
