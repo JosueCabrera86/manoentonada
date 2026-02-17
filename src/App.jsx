@@ -30,22 +30,8 @@ function App() {
           }
         />
         <Route path="/acceder" element={<Acceder />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/panel"
-          element={
-            <ProtectedRoute>
-              <Panel />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/panel" element={<Panel />} />
       </Routes>
       <Footer />
     </>
