@@ -28,7 +28,7 @@ function ManoEntonada() {
     {
       imagen: "cuenco",
       titulo: "Mano entonada",
-      subtitulo: "El arte de pausar : regalarse un momento de conexión",
+      subtitulo: "El arte de pausar: regalarse un momento de conexión",
     },
   ];
   return (

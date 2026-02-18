@@ -92,7 +92,7 @@ function RutinasModal({ material, nivelUsuario = 20 }) {
       tipo: "video",
       title: "5. Pómulos y sonrisa",
       video: "https://www.youtube.com/embed/uPnft5T1_Ps",
-      img: "/imgminis/5_pomulosysonrisa.png",
+      img: "/imgminis/5_pomulosysonrisa_rutina.png",
     },
     {
       categoria: 21,

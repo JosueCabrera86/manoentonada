@@ -15,7 +15,7 @@ function Hero({ imagen, titulo, subtitulo }) {
         <h1
           className="
             playfairbold  text-titulos  
-            text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+            text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider
           "
         >
           {titulo}
@@ -24,7 +24,7 @@ function Hero({ imagen, titulo, subtitulo }) {
         <h2
           className="
             gilda text-subtitulo mt-3
-            text-xl sm:text-2xl md:text-3xl lg:text-4xl
+            text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wider
           "
         >
           {subtitulo}

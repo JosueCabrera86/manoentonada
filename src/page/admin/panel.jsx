@@ -145,15 +145,32 @@ function Panel() {
         }
 
         if (categoria !== null && categoria !== currentValues.categoria) {
-          body.categoria = categoria;
+          body.categoria = parseInt(categoria, 10);
         }
 
         if (password) {
           body.password = password;
         }
+
+        if (Object.keys(body).length === 1) {
+          alert("No hay cambios para actualizar");
+          return;
+        }
       }
 
-      if (modal === "editar_masa" && applyCategoria && categoria !== null) {
+      if (modal === "editar_masa") {
+        if (seleccionados.length === 0) {
+          alert("Selecciona al menos un usuario");
+          setLoading(false);
+          return;
+        }
+
+        if (categoria === null) {
+          alert("Selecciona una categoría");
+          setLoading(false);
+          return;
+        }
+
         url = "https://backendmanoentonada.onrender.com/users/multiple";
         method = "PATCH";
         body = {
@@ -163,12 +180,17 @@ function Panel() {
       }
 
       if (modal === "borrar") {
-        if (!currentValues?.auth_id) {
-          throw new Error("Usuario no válido");
+        if (seleccionados.length === 0) {
+          alert("Selecciona al menos un usuario");
+          setLoading(false);
+          return;
         }
 
-        url = `https://backendmanoentonada.onrender.com/users/${currentValues.auth_id}`;
+        url = "https://backendmanoentonada.onrender.com/users/multiple";
         method = "DELETE";
+        body = {
+          ids: seleccionados,
+        };
       }
 
       const resp = await fetch(url, {
@@ -177,17 +199,13 @@ function Panel() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${session.access_token}`,
         },
-        body: modal !== "borrar" ? JSON.stringify(body) : undefined,
+        body: JSON.stringify(body),
       });
 
       if (!resp.ok) {
-        const data = await resp.json().catch(() => ({}));
-        const message =
-          typeof data?.error === "string"
-            ? data.error
-            : data?.message || "Error en la acción";
-
-        throw new Error(message);
+        const text = await resp.text();
+        console.log("ERROR BACKEND COMPLETO:", text);
+        throw new Error(text);
       }
 
       await fetchUsuarios();
@@ -278,8 +296,8 @@ function Panel() {
               </button>
               <button
                 onClick={() => {
-                  if (seleccionados.length !== 1)
-                    return alert("Selecciona un usuario");
+                  if (seleccionados.length === 0)
+                    return alert("Selecciona al menos un usuario");
                   setModal("borrar");
                 }}
                 className="flex items-center gap-2 px-5 py-2 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition shadow-sm"
@@ -549,9 +567,12 @@ function Panel() {
 
               {/* ---------------- BORRAR ---------------- */}
               {modal === "borrar" && (
-                <p className="text-center text-zinc-700">
-                  ¿Seguro que deseas eliminar este usuario?
-                </p>
+                <div className="text-center space-y-3">
+                  <p>¿Eliminar {seleccionados.length} usuario(s)?</p>
+                  <p className="text-xs text-red-500">
+                    Esta acción no se puede deshacer
+                  </p>
+                </div>
               )}
 
               {/* BOTONES */}

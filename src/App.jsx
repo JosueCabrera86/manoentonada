@@ -24,14 +24,23 @@ function App() {
         <Route
           path="/suscriptores"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute tipo="user">
               <Suscriptores />
             </ProtectedRoute>
           }
         />
+
+        <Route path="/yogafacial" element={<YogaFacial />} />
         <Route path="/acceder" element={<Acceder />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/panel" element={<Panel />} />
+        <Route
+          path="/panel"
+          element={
+            <ProtectedRoute tipo="admin">
+              <Panel />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <Footer />
     </>
