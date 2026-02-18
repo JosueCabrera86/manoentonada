@@ -358,96 +358,203 @@ function Panel() {
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* ---------------- AGREGAR ---------------- */}
               {modal === "agregar" && (
                 <>
+                  {/* Nombre */}
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#4B5320] ml-1">
                       NOMBRE COMPLETO
                     </label>
                     <input
                       type="text"
-                      placeholder="Ej: Maria Lopez"
                       value={nombre}
                       onChange={(e) => setNombre(e.target.value)}
-                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant"
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                      required
                     />
                   </div>
+
+                  {/* Email */}
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#4B5320] ml-1">
                       CORREO
                     </label>
                     <input
                       type="email"
-                      placeholder="email@ejemplo.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant"
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                      required
+                    />
+                  </div>
+
+                  {/* Rol */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      ROL
+                    </label>
+                    <select
+                      value={rol}
+                      onChange={(e) => setRol(e.target.value)}
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                      required
+                    >
+                      <option value="" hidden>
+                        Selecciona rol
+                      </option>
+                      <option value="admin">Administrador</option>
+                      <option value="user">Usuario</option>
+                    </select>
+                  </div>
+
+                  {/* Categoría */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      CATEGORÍA
+                    </label>
+                    <select
+                      value={categoria ?? ""}
+                      onChange={(e) =>
+                        setCategoria(
+                          e.target.value === ""
+                            ? null
+                            : parseInt(e.target.value, 10),
+                        )
+                      }
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                    >
+                      <option value="">Sin categoría</option>
+                      {Array.from({ length: 22 }, (_, i) => (
+                        <option key={i} value={i}>
+                          {i}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Password */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      CONTRASEÑA
+                    </label>
+                    <div className="relative">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] pr-10"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500"
+                      >
+                        {showPassword ? <PiEyeSlash /> : <PiEye />}
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* ---------------- EDITAR INDIVIDUAL ---------------- */}
+              {modal === "editar" && (
+                <>
+                  {/* Nombre */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      NOMBRE
+                    </label>
+                    <input
+                      type="text"
+                      value={nombre}
+                      onChange={(e) => setNombre(e.target.value)}
+                      placeholder={currentValues?.name}
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                    />
+                  </div>
+
+                  {/* Categoría */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      CATEGORÍA
+                    </label>
+                    <select
+                      value={categoria ?? ""}
+                      onChange={(e) =>
+                        setCategoria(
+                          e.target.value === ""
+                            ? null
+                            : parseInt(e.target.value, 10),
+                        )
+                      }
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                    >
+                      <option value="">Sin categoría</option>
+                      {Array.from({ length: 22 }, (_, i) => (
+                        <option key={i} value={i}>
+                          {i}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Password */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      NUEVA CONTRASEÑA
+                    </label>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
                     />
                   </div>
                 </>
               )}
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-[#4B5320] ml-1">
-                  ROL
-                </label>
-                <select
-                  value={rol}
-                  onChange={(e) => setRol(e.target.value)}
-                  className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant"
-                >
-                  <option value="" hidden>
-                    Selecciona rol
-                  </option>
-                  <option value="admin">Administrador</option>
-                  <option value="user">Usuario</option>
-                </select>
-              </div>
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-[#4B5320] ml-1">
-                  CATEGORÍA
-                </label>
-                <select
-                  value={categoria ?? ""}
-                  onChange={(e) =>
-                    setCategoria(
-                      e.target.value === ""
-                        ? null
-                        : parseInt(e.target.value, 10),
-                    )
-                  }
-                  className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant"
-                >
-                  <option value="">Sin categoría</option>
-                  {Array.from({ length: 22 }, (_, i) => (
-                    <option key={i} value={i}>
-                      {i}
-                    </option>
-                  ))}
-                </select>
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#4B5320] ml-1">
-                    CONTRASEÑA
-                  </label>
-                  <div className="relative">
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      placeholder="Mínimo 6 caracteres"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant pr-10"
-                      required
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500"
-                    >
-                      {showPassword ? <PiEyeSlash /> : <PiEye />}
-                    </button>
-                  </div>
-                </div>
-              </div>
 
+              {/* ---------------- EDICIÓN MASIVA ---------------- */}
+              {modal === "editar_masa" && (
+                <>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#4B5320] ml-1">
+                      CATEGORÍA (aplicar a {seleccionados.length} usuarios)
+                    </label>
+                    <select
+                      value={categoria ?? ""}
+                      onChange={(e) =>
+                        setCategoria(
+                          e.target.value === ""
+                            ? null
+                            : parseInt(e.target.value, 10),
+                        )
+                      }
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2]"
+                      required
+                    >
+                      <option value="" hidden>
+                        Selecciona categoría
+                      </option>
+                      {Array.from({ length: 22 }, (_, i) => (
+                        <option key={i} value={i}>
+                          {i}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </>
+              )}
+
+              {/* ---------------- BORRAR ---------------- */}
+              {modal === "borrar" && (
+                <p className="text-center text-zinc-700">
+                  ¿Seguro que deseas eliminar este usuario?
+                </p>
+              )}
+
+              {/* BOTONES */}
               <div className="flex flex-col gap-3 mt-8">
                 <button
                   type="submit"
@@ -456,6 +563,7 @@ function Panel() {
                 >
                   {loading ? "Procesando..." : "Confirmar Acción"}
                 </button>
+
                 <button
                   type="button"
                   onClick={() => {
