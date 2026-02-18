@@ -104,7 +104,7 @@ function Panel() {
 
     setNombre("");
     setCategoria(null);
-    setDisciplina("");
+    setRol(user.rol || "");
 
     setModal("editar");
   };
@@ -129,7 +129,6 @@ function Panel() {
           name: nombre,
           rol,
           categoria: categoria === null ? null : parseInt(categoria, 10),
-          disciplina,
         };
       }
 
@@ -147,10 +146,6 @@ function Panel() {
 
         if (categoria !== null && categoria !== currentValues.categoria) {
           body.categoria = categoria;
-        }
-
-        if (disciplina && disciplina !== currentValues.disciplina) {
-          body.disciplina = disciplina;
         }
 
         if (password) {
@@ -206,19 +201,13 @@ function Panel() {
     }
   };
 
-  // -------------------- LOGOUT --------------------
   const handleLogout = async () => {
     await supabase.auth.signOut();
     navigate("/");
   };
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: "url('/imgmano/dashboard.png')" }} // Fondo consistente
-    >
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />{" "}
-      {/* Overlay suave */}
+    <div className="min-h-screen bg-cover bg-center bg-fixed bg-servicios">
       <div className="container mx-auto p-4 relative z-10">
         {/* --- ESTADO DE CARGA --- */}
         {loadingSession && (
@@ -255,8 +244,8 @@ function Panel() {
                 alt="logo"
                 className="w-20 mb-4"
               />
-              <h1 className="playfairbold text-4xl text-zinc-800 text-center">
-                Gestión de Alumnas
+              <h1 className="playfairbold text-4xl text-titulos text-center">
+                Gestión de Usuarios
               </h1>
             </header>
 
@@ -275,7 +264,7 @@ function Panel() {
                 onClick={() => {
                   setModal("editar");
                 }}
-                className="flex items-center gap-2 px-5 py-2 bg-nuestro-lila text-white rounded-full hover:opacity-90 transition shadow-sm"
+                className="flex items-center gap-2 px-5 py-2 bg-[#9eb0a3] text-white rounded-full hover:opacity-90 transition shadow-sm"
               >
                 <PiPencilSimple size={20} /> Editar
               </button>
@@ -304,8 +293,8 @@ function Panel() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-[#9eb0a2]/20 text-[#4B5320] cormorant text-xl">
-                      <th className="p-4 font-semibold">Sel.</th>
+                    <tr className="bg-[#9eb0a2]/20 text-[#4B5320] gilda text-xl">
+                      <th className="p-4 font-semibold">Seleccionar</th>
                       <th className="p-4 font-semibold">Nombre</th>
                       <th className="p-4 font-semibold">Email</th>
                       <th className="p-4 font-semibold text-center">
@@ -360,16 +349,15 @@ function Panel() {
           </div>
         )}
       </div>
-      {/* --- MODALES CON ESTILO FORMULARIO --- */}
+
       {modal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
           <div className="bg-yogafacial p-8 rounded-3xl shadow-2xl border border-white w-full max-w-md relative animate-in fade-in zoom-in duration-200">
-            <h2 className="playfairbold text-2xl text-zinc-800 mb-6 text-center capitalize">
+            <h2 className="playfairbold text-2xl text-titulos mb-6 text-center capitalize">
               {modal.replace("_", " ")}
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Campos dinámicos según el modal */}
               {modal === "agregar" && (
                 <>
                   <div className="space-y-1">
@@ -398,11 +386,25 @@ function Panel() {
                   </div>
                 </>
               )}
-
-              {/* ... Los select y otros inputs siguen la misma lógica de estilo ... */}
               <div className="space-y-1">
                 <label className="text-xs font-bold text-[#4B5320] ml-1">
-                  CATEGORÍA (DÍA)
+                  ROL
+                </label>
+                <select
+                  value={rol}
+                  onChange={(e) => setRol(e.target.value)}
+                  className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant"
+                >
+                  <option value="" hidden>
+                    Selecciona rol
+                  </option>
+                  <option value="admin">Administrador</option>
+                  <option value="user">Usuario</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs font-bold text-[#4B5320] ml-1">
+                  CATEGORÍA
                 </label>
                 <select
                   value={categoria ?? ""}
@@ -418,18 +420,39 @@ function Panel() {
                   <option value="">Sin categoría</option>
                   {Array.from({ length: 22 }, (_, i) => (
                     <option key={i} value={i}>
-                      Día {i}
+                      {i}
                     </option>
                   ))}
                 </select>
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-[#4B5320] ml-1">
+                    CONTRASEÑA
+                  </label>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Mínimo 6 caracteres"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="w-full p-3 bg-white/50 border border-zinc-200 rounded-xl outline-none focus:ring-2 focus:ring-[#9eb0a2] cormorant pr-10"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500"
+                    >
+                      {showPassword ? <PiEyeSlash /> : <PiEye />}
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              {/* BOTONES ACCIÓN */}
               <div className="flex flex-col gap-3 mt-8">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 bg-[#9eb0a2] text-white rounded-full font-bold hover:shadow-lg transition"
+                  className="w-full py-3 bg-[#9eb0a2] text-white rounded-full font-bold hover:shadow-lg transition active:scale-95"
                 >
                   {loading ? "Procesando..." : "Confirmar Acción"}
                 </button>
@@ -439,7 +462,7 @@ function Panel() {
                     setModal(null);
                     resetForm();
                   }}
-                  className="w-full py-2 text-zinc-400 hover:text-zinc-600 transition text-sm"
+                  className="w-full py-2 text-zinc-400 hover:text-zinc-600 transition text-sm active:scale-95"
                 >
                   Cancelar
                 </button>
