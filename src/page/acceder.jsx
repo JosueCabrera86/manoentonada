@@ -86,25 +86,31 @@ const Acceder = () => {
   return (
     <div>
       <div
-        className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-cover bg-center bg-no-repeat"
+        className="relative min-h-screen flex items-center justify-center px-4 py-16 md:py-20 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/imgmano/login.png')" }}
       >
-        <div className="absolute inset-0 bg-black/20 " />
-        <div className="bg-yogafacial backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-xl border border-white/50 max-w-md w-full relative z-10">
-          <div className="flex flex-col items-center mb-8">
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div className="bg-yogafacial backdrop-blur-lg p-6 sm:p-8 md:p-12 rounded-3xl shadow-xl border border-white/50 max-w-md w-full relative z-10">
+          {/* Header */}
+          <div className="flex flex-col items-center mb-8 text-center">
             <img
-              src="imagenes/logo_manoentonadas.png"
-              alt="logo"
-              className="w-25"
+              src="/imagenes/logo_manoentonadas.png"
+              alt="Logo Mano Entonada"
+              className="w-20 sm:w-24 mb-4"
             />
-            <h2 className="playfairbold text-3xl text-zinc-800">Bienvenida</h2>
-            <p className="cormorant text-lg text-zinc-600">
+            <h2 className="playfairbold text-2xl sm:text-3xl text-zinc-800">
+              Bienvenida
+            </h2>
+            <p className="cormorant text-base sm:text-lg text-zinc-600 mt-2">
               Inicia sesión en tu espacio de bienestar
             </p>
           </div>
 
+          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="relative">
+            {/* Email */}
+            <div>
               <label className="text-sm font-medium text-[#4B5320] ml-1 mb-1 block">
                 Correo electrónico
               </label>
@@ -118,7 +124,7 @@ const Acceder = () => {
                 <input
                   type="email"
                   required
-                  className="w-full pl-10 pr-4 py-3 bg-white/50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-lg"
+                  className="w-full pl-10 pr-4 py-3 bg-white/60 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-base sm:text-lg"
                   placeholder="tu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -126,12 +132,12 @@ const Acceder = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="flex justify-between items-center mb-1">
-                <label className="text-sm font-medium text-[#4B5320] ml-1">
-                  Contraseña
-                </label>
-              </div>
+            {/* Password */}
+            <div>
+              <label className="text-sm font-medium text-[#4B5320] ml-1 mb-1 block">
+                Contraseña
+              </label>
+
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <PiLock
@@ -139,38 +145,31 @@ const Acceder = () => {
                     size={20}
                   />
                 </div>
-                <div className="relative group">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <PiLock
-                      className="text-zinc-400 group-focus-within:text-[#4B5320] transition-colors"
-                      size={20}
-                    />
-                  </div>
 
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    required
-                    className="w-full pl-10 pr-12 py-3 bg-white/50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-950 outline-none transition-all cormorant text-lg"
-                    placeholder="••••••••"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
+                <input
+                  type={showPassword ? "text" : "password"}
+                  required
+                  className="w-full pl-10 pr-12 py-3 bg-white/60 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-base sm:text-lg"
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
 
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-zinc-400 hover:text-[#4B5320] transition-colors"
-                  >
-                    {showPassword ? (
-                      <PiEyeSlash size={20} />
-                    ) : (
-                      <PiEye size={20} />
-                    )}
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-zinc-400 hover:text-[#4B5320] transition-colors"
+                >
+                  {showPassword ? (
+                    <PiEyeSlash size={20} />
+                  ) : (
+                    <PiEye size={20} />
+                  )}
+                </button>
               </div>
             </div>
 
+            {/* Submit */}
             <button
               type="submit"
               className="w-full bg-[#9eb0a2] text-white font-semibold py-3 rounded-full hover:bg-[#8da092] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:scale-95 mt-4"
@@ -179,8 +178,9 @@ const Acceder = () => {
             </button>
           </form>
 
+          {/* Footer */}
           <p className="text-center mt-8 text-sm text-zinc-500">
-            ¿No tienes cuenta aún? {""}
+            ¿No tienes cuenta aún?{" "}
             <Link
               to="/#contacto"
               className="text-rose-400 font-semibold hover:underline"

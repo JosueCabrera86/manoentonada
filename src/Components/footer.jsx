@@ -6,109 +6,120 @@ function Footer() {
     <footer className="w-full">
       <div
         className="
-          backdrop-blur-xl bg-yogafacial 
-         shadow-xl
-          px-6 md:px-12 py-4
+          backdrop-blur-xl bg-yogafacial
+          shadow-xl
+          px-4 sm:px-8 md:px-12 py-10
         "
       >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+          {/* ================= SECCIONES ================= */}
           <div>
-            <h3 className="text-titulos playfairbold text-2xl  mb-2">
+            <h3 className="text-titulos playfairbold text-xl sm:text-2xl mb-4">
               Secciones
             </h3>
-            <ul className="space-y-2 text-enlace gilda text-lg">
+
+            <ul className="space-y-2 text-enlace gilda text-base sm:text-lg">
               <li>
-                <a href="/#servicios" className="hover:text-white">
+                <a href="/#servicios" className="hover:text-white transition">
                   Servicios
                 </a>
               </li>
-
               <li>
-                <a href="/yogafacial" className="hover:text-white">
+                <a href="/yogafacial" className="hover:text-white transition">
                   Yoga facial
                 </a>
               </li>
               <li>
-                <a href="/acceder" className="hover:text-white">
+                <a href="/acceder" className="hover:text-white transition">
                   Acceder
                 </a>
               </li>
               <li>
-                <a href="/#contacto" className="hover:text-white">
+                <a href="/#contacto" className="hover:text-white transition">
                   Contacto
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col items-center md:items-center">
-            <h2 className="text-2xl playfairbold text-titulos">
+          {/* ================= MARCA ================= */}
+          <div className="flex flex-col items-center">
+            <h2 className="text-xl sm:text-2xl playfairbold text-titulos">
               Mano Entonada
             </h2>
-            <p className="mt-2 text-enlace gilda text-lg">
+
+            <p className="mt-2 text-enlace gilda text-base sm:text-lg">
               Bienestar, energía y presencia.
             </p>
 
             <img
               src="/imagenes/logo_manoentonadas.png"
               alt="logo mano entonada"
-              className="w-32 mt-4"
+              className="w-24 sm:w-28 md:w-32 mt-4"
             />
           </div>
 
+          {/* ================= SOCIAL + NEWSLETTER ================= */}
           <div>
-            <h3 className="text-titulos text-center text-2xl playfairbold mb-2">
+            <h3 className="text-titulos text-xl sm:text-2xl playfairbold mb-4">
               Sígueme
             </h3>
 
-            <div className="flex justify-center md:justify-center gap-5 text-white/70 text-lg mb-6">
+            <div className="flex justify-center gap-6 text-lg mb-6">
               <a
                 href="https://www.instagram.com/manoentonadafaceyoga?igsh=MTVrdms4d2RoMWl3bA=="
-                className="hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition"
               >
-                <FiInstagram size={25} className="text-enlace" />
+                <FiInstagram size={24} className="text-enlace" />
               </a>
+
               <a
                 href="https://www.facebook.com/ManoEntonadaFaceYoga"
-                className="hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition"
               >
-                <FiFacebook size={25} className="text-enlace" />
+                <FiFacebook size={24} className="text-enlace" />
               </a>
             </div>
 
-            <div className="mt-4">
-              <h3 className="text-titulos text-2xl playfairbold mb-3">
+            <div className="mt-6">
+              <h3 className="text-titulos text-lg sm:text-xl playfairbold mb-4">
                 Suscríbete al newsletter
               </h3>
 
-              <form className=" gap-3 justify-center md:justify-center">
+              <form className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <input
                   type="email"
                   placeholder="Tu email"
                   className="
-                    px-4 py-2 rounded-xl  text-gray-600 border-2 border-teal-600
-                  
+                    px-4 py-2 rounded-xl
+                    text-gray-600 border-2 border-teal-600
                     w-full sm:w-auto
+                    focus:outline-none focus:ring-2 focus:ring-teal-400
                   "
                 />
-                <div>
-                  <button
-                    type="submit"
-                    className="
-                    px-6 py-2 rounded-xl 
+
+                <button
+                  type="submit"
+                  className="
+                    px-6 py-2 rounded-xl
                     bg-secundario text-enlace gilda text-lg font-semibold
                     hover:bg-secundario/80 transition
+                    w-full sm:w-auto
                   "
-                  >
-                    Enviar
-                  </button>
-                </div>
+                >
+                  Enviar
+                </button>
               </form>
             </div>
           </div>
         </div>
 
-        <div className="w-full text-center playfairbold mt-8 text-titulos text-xl">
+        {/* ================= COPYRIGHT ================= */}
+        <div className="w-full text-center playfairbold mt-12 text-titulos text-sm sm:text-base">
           © {new Date().getFullYear()} Mano Entonada — Todos los derechos
           reservados.
         </div>

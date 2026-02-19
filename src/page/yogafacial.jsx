@@ -98,13 +98,18 @@ function YogaFacial() {
           subtitulo={hero.subtitulo}
         />
       ))}
-      <div className="bg-divisiones text-center mx-auto py-12 items-center">
-        <p className="cormorant text-4xl mx-28 text-zinc-900 italic">
+      <div className="bg-divisiones py-12 md:py-16 px-6 sm:px-10 md:px-16 text-center">
+        <p
+          className="cormorant text-xl sm:text-2xl md:text-3xl lg:text-4xl 
+                text-zinc-900 italic leading-relaxed 
+                max-w-4xl mx-auto"
+        >
           El Yoga Facial es más que una rutina estética. Es una disciplina
           holística para el rostro que combina movimiento, respiración y
           alegría.
         </p>
       </div>
+
       <section className="bg-yogafacial">
         {datos.map((dato) => (
           <Informacion

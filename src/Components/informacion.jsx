@@ -17,48 +17,70 @@ function Informacion({
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 bg-mano overflow-hidden">
+      {/* ================= TEXTO ================= */}
       <div
-        className={`p-4 mx-3 flex flex-col justify-center  ${textOrderClass}`}
+        className={`
+      px-6 py-10 sm:px-10 md:px-16
+      flex flex-col justify-center
+      ${textOrderClass}
+    `}
       >
-        <h1 className="playfairbold mx-3.5 font-semibold text-titulos text-3xl mb-4">
+        <h1 className="playfairbold font-semibold text-titulos text-2xl sm:text-3xl md:text-4xl mb-4 leading-tight">
           {titulo}
         </h1>
+
         {subtitulo && (
-          <h2 className="my-1.5 mx-3.5 text-xl gilda text-[#4B5320]">
+          <h2 className="mb-3 text-lg sm:text-xl gilda text-[#4B5320]">
             {subtitulo}
           </h2>
         )}
-        <div className="flex items-center">
-          <p className="mx-3.5 text-lg text-zinc-900 cormorant">{texto}</p>
-        </div>
+
+        <p className="text-base sm:text-lg text-zinc-900 cormorant leading-relaxed max-w-xl">
+          {texto}
+        </p>
+
         {showLink && (
           <div
-            className={`mt-6 flex ${reverse ? "justify-end" : "justify-start"}`}
+            className={`mt-6 flex ${
+              reverse ? "md:justify-end justify-start" : "justify-start"
+            }`}
           >
-            <button
+            <a
+              href={linkUrl}
               onClick={onLinkClick}
-              className="gilda text-lg italic mx-3.5 text-[#4B5320] hover:text-emerald-800 flex items-center gap-2 group transition-all duration-300"
+              className="
+            gilda text-base sm:text-lg italic
+            text-[#4B5320]
+            hover:text-emerald-800
+            border-b border-transparent
+            hover:border-emerald-800
+            pb-0.5
+            transition-all duration-300
+          "
             >
-              <a
-                href={linkUrl}
-                className="border-b border-transparent group-hover:border-emerald-800 pb-0.5"
-              >
-                {linkText} →
-              </a>
-            </button>
+              {linkText} →
+            </a>
           </div>
         )}
+
         {notas && (
-          <p className="text-sm mt-8 mx-2.5 italic opacity-70">{notas}</p>
+          <p className="text-sm mt-8 italic opacity-70 max-w-lg">{notas}</p>
         )}
       </div>
 
-      <div className={`${imageOrderClass} relative h-[300px] md:h-[400px]`}>
+      {/* ================= IMAGEN ================= */}
+      <div
+        className={`
+      ${imageOrderClass}
+      relative
+      h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px]
+    `}
+      >
         <div className="relative w-full h-full">
           <img
             src={`/imgmano/${imagen}.png`}
             alt={`Imagen de ${imagen}`}
-            className="w-full h-full object-cover shadow-lg"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-white/15 z-10" />
         </div>

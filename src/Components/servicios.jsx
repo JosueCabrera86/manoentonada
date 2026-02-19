@@ -50,11 +50,12 @@ function Servicios() {
   ];
   return (
     <div>
-      <div className="bg-divisiones text-center mx-auto py-12 items-center">
-        <p className="cormorant font-bold text-4xl mx-28 text-zinc-900 italic">
+      <div className="bg-divisiones text-center py-10 md:py-12 px-4">
+        <p className="cormorant font-bold text-3xl sm:text-4xl md:text-5xl text-zinc-900 italic tracking-wide">
           Servicios
         </p>
       </div>
+
       <section id="servicios" className="bg-servicios">
         {servicios.map((servicio) => (
           <Informacion
@@ -69,13 +70,17 @@ function Servicios() {
           />
         ))}
       </section>
-      <div className="bg-divisiones py-16 text-center">
-        <p className="cormorant font-bold text-4xl text-zinc-800 italic mb-4">
+      <div className="bg-divisiones py-12 md:py-16 px-4 text-center">
+        <p className="cormorant font-bold text-2xl sm:text-3xl md:text-4xl text-zinc-800 italic mb-6 leading-snug max-w-3xl mx-auto">
           ¿Dudas sobre qué servicio es conveniente?
         </p>
+
         <a
           href="#contacto"
-          className="gilda text-2xl text-emerald-900 underline-offset-4 hover:decoration-emerald-800 hover:underline transition-all"
+          className="gilda text-base sm:text-lg md:text-xl text-emerald-900 
+               
+               hover:text-emerald-800 
+               transition-colors duration-300"
         >
           Escribe para encontrar lo más adecuado a tu circunstancia actual →
         </a>

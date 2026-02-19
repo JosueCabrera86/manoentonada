@@ -26,28 +26,44 @@ const testimonials = [
 
 const Opiniones = () => {
   return (
-    <section className="py-20 bg-[#f9f7f5]">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-center text-2xl font-light tracking-[0.2em] text-gray-500 mb-16 playfaire">
-          Esto opinan quienes han confiado en Mano entonada
+    <section className="py-16 md:py-20 bg-[#f9f7f5]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-light tracking-[0.15em] text-gray-500 mb-12 md:mb-16 playfaire">
+          Esto opinan quienes han confiado en Mano Entonada
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 
+                     hover:shadow-md transition-all duration-300 
+                     flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-gray-200 rounded-full mb-4 overflow-hidden border-2 border-[#b5c7b9]">
-                <img src={`/imgopiniones/${item.imagen}.jpg`} alt={item.name} />
+              {/* Imagen */}
+              <div
+                className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 rounded-full mb-4 
+                          overflow-hidden border-2 border-[#b5c7b9]"
+              >
+                <img
+                  src={`/imgopiniones/${item.imagen}.jpg`}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="font-semibold text-gray-800 italic">
+
+              {/* Nombre */}
+              <h3 className="font-semibold text-gray-800 italic text-base sm:text-lg">
                 {item.name}
               </h3>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-4">
+
+              {/* Rol */}
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-400 mb-4">
                 {item.role}
               </p>
-              <p className="text-sm text-gray-600 leading-relaxed italic">
+
+              {/* Texto */}
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed italic">
                 "{item.text}"
               </p>
             </div>

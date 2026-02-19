@@ -40,9 +40,9 @@ function ManoEntonada() {
           subtitulo={hero.subtitulo}
         />
       ))}
-      <div className="bg-divisiones text-center mx-auto py-12 items-center">
-        <p className="cormorant text-4xl mx-28 text-zinc-900 italic">
-          Mano Entonada es el nombre bajo el cual se reunen dones para sanar y
+      <div className="bg-divisiones text-center py-10 px-6 sm:px-10 md:px-16 lg:px-28">
+        <p className="cormorant text-xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-900 italic leading-relaxed max-w-4xl mx-auto">
+          Mano Entonada es el nombre bajo el cual se reúnen dones para sanar y
           ofrecerlos al mundo a través de servicios y seminarios para el
           bienestar.
         </p>

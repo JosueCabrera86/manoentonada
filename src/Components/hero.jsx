@@ -2,20 +2,25 @@ import React from "react";
 
 function Hero({ imagen, titulo, subtitulo }) {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full min-h-[85vh] sm:min-h-screen overflow-hidden">
+      {/* Imagen */}
       <img
         src={`/imgmano/${imagen}.png`}
         alt="imagen de portada"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+      {/* Contenido */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 min-h-[85vh] sm:min-h-screen">
         <h1
           className="
-            playfairbold  text-titulos  
-            text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider
+            playfairbold text-titulos
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+            leading-tight tracking-wide
+            max-w-5xl
           "
         >
           {titulo}
@@ -23,8 +28,11 @@ function Hero({ imagen, titulo, subtitulo }) {
 
         <h2
           className="
-            gilda text-subtitulo mt-3
-            text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wider
+            gilda text-subtitulo
+            mt-4
+            text-lg sm:text-xl md:text-2xl lg:text-3xl
+            tracking-wide
+            max-w-3xl
           "
         >
           {subtitulo}

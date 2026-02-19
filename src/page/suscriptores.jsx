@@ -128,17 +128,18 @@ function Suscriptores() {
         />
       ))}
 
-      <section className="bg-divisiones text-center mx-auto py-12 items-center">
-        <p className="flex flex-col sm:flex-row justify-center items-center cormorant text-3xl mx-28 text-zinc-900 italic">
-          <PiFlowerLotus className="text-6xl  text-rose-400" /> ¡Hola, nos da
-          mucho gusto que estés aquí! Te damos la bienvenida a este espacio que
-          ha sido creado para que puedas dar continuidad a tus sesiones de Yoga
-          Facial.
-          <PiFlowerLotus className="text-8xl  text-rose-400" />
+      <section className="bg-divisiones text-center mx-auto py-10 px-4 sm:px-8 md:px-16 lg:px-28">
+        <p className="flex flex-col sm:flex-row justify-center items-center gap-4 cormorant text-xl sm:text-2xl md:text-3xl text-zinc-900 italic max-w-5xl mx-auto">
+          <PiFlowerLotus className="text-4xl sm:text-5xl md:text-6xl text-rose-400 shrink-0" />
+          ¡Hola, nos da mucho gusto que estés aquí! Te damos la bienvenida a
+          este espacio que ha sido creado para que puedas dar continuidad a tus
+          sesiones de Yoga Facial.
+          <PiFlowerLotus className="text-4xl sm:text-5xl md:text-6xl text-rose-400 shrink-0" />
         </p>
       </section>
+
       <section className="bg-yogafacial py-8 ">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto ">
           {(() => {
             const baseMasajes = [
               { categoria: 2 },
@@ -154,7 +155,7 @@ function Suscriptores() {
             return (
               puedeVerMasajes && (
                 <div
-                  className="w-[90%] sm:w-[85%] md:w-[80%] max-w-md rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 cursor-pointer border border-sky-200 hover:shadow-xl hover:scale-[1.02]"
+                  className="w-full rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 cursor-pointer border border-sky-200 hover:shadow-xl hover:scale-[1.02]"
                   onClick={() =>
                     setMaterial({ ...material, modalActivo: "masajes" })
                   }
@@ -194,7 +195,7 @@ function Suscriptores() {
             return (
               puedeVerRutinas && (
                 <div
-                  className="w-[90%] sm:w-[85%] md:w-[80%] max-w-md rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 cursor-pointer border border-sky-200 hover:shadow-xl hover:scale-[1.02]"
+                  className="w-full rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 cursor-pointer border border-sky-200 hover:shadow-xl hover:scale-[1.02]"
                   onClick={() =>
                     setMaterial({ ...material, modalActivo: "rutinas" })
                   }
@@ -229,7 +230,7 @@ function Suscriptores() {
             return (
               puedeVerClases && (
                 <div
-                  className="w-[90%] sm:w-[85%] md:w-[80%] max-w-md rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 cursor-pointer border border-sky-200 hover:shadow-xl hover:scale-[1.02]"
+                  className="w-full rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 cursor-pointer border border-sky-200 hover:shadow-xl hover:scale-[1.02]"
                   onClick={() =>
                     setMaterial({ ...material, modalActivo: "clases" })
                   }
@@ -251,7 +252,7 @@ function Suscriptores() {
         </div>
         {material.modalActivo && (
           <div className="fixed inset-0 bg-yogafacial flex items-center justify-center z-50">
-            <div className="bg-black/60 rounded-2xl p-6 w-full max-w-5xl mx-4 relative overflow-y-auto max-h-[90vh] shadow-2xl">
+            <div className="bg-black/60 rounded-2xl p-4 sm:p-6 w-full max-w-5xl mx-4 relative overflow-y-auto max-h-[90vh] shadow-2xl">
               <button
                 onClick={() => setMaterial({ ...material, modalActivo: null })}
                 className="absolute top-2 right-3 text-3xl text-titulos hover:text-titulos font-bold"
@@ -288,7 +289,7 @@ function Suscriptores() {
         <div className="flex justify-center my-8">
           <button
             onClick={handleLogout}
-            className="px-4 py-2 bg-[#9eb0a2] text-white rounded-2xl transition"
+            className="px-6 py-3 bg-[#9eb0a2] text-white rounded-2xl transition hover:scale-105"
           >
             Cerrar sesión
           </button>
