@@ -29,7 +29,7 @@ function Servicios() {
       titulo: "Reiki",
       subtitulo: "Canalización de Energía Vital",
       texto:
-        'Como "Mano Entonada", servimos de puente para que la energía universal fluya con propósito hacia tu ser. El Reiki es nuestra herramienta para armonizar tus centros energéticos, logrando esa "buena canalización" que nos caracteriza. En este espacio de paz, la vibración azul de la transformación trabaja en tus capas más sutiles, disolviendo bloqueos y recordándote que el poder de sanar reside, fundamentalmente, en la apertura de tu propio espíritu.',
+        "Cual manos con un buen tono, y al servicio de ser puente, la energía universal fluye con propósito a través del ser. El reiki es una herramienta para armonizar los centros energéticos a través de su canalización. En este espacio de paz, la vibración de la transformación trabaja en tus capas más sutiles, disolviendo bloqueos y recordándote que el poder de sanar reside, fundamentalmente, en la apertura de tu propio espíritu.",
       imagen: "reiki",
       reverse: false,
       showLink: true,
@@ -38,9 +38,9 @@ function Servicios() {
     },
     {
       titulo: "Registros Akashicos",
-      subtitulo: "Sabiduría para el Propósito",
+      subtitulo: "Sabiduría del Alma",
       texto:
-        "Acceder a tus Registros Akáshicos es entrar en contacto con la memoria del alma para comprender tu misión actual. Bajo la guía de nuestra esencia entonada, facilitamos una lectura clara y amorosa que te permite materializar respuestas y sanar linajes. Es una oportunidad para que el clan y el individuo se reconozcan en su historia, transformando la información en sabiduría práctica para caminar con mayor consciencia y claridad hacia tu destino.",
+        "Acceder a tus Registros Akáshicos es entrar en contacto con la memoria del alma para comprender tu actual sendero. Se facilita una lectura clara y amorosa que te permite materializar respuestas. Es una oportunidad para que el clan y el individuo se reconozcan en su historia, transformando la información en sabiduría práctica para caminar con mayor consciencia y claridad hacia tu destino.",
       imagen: "registros",
       reverse: true,
       showLink: true,
