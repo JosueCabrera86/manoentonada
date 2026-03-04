@@ -12,7 +12,6 @@ function Footer() {
         "
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
-          {/* ================= SECCIONES ================= */}
           <div>
             <h3 className="text-titulos playfairbold text-xl sm:text-2xl mb-4">
               Secciones
@@ -42,7 +41,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* ================= MARCA ================= */}
           <div className="flex flex-col items-center">
             <h2 className="text-xl sm:text-2xl playfairbold text-titulos">
               Mano Entonada
@@ -59,13 +57,12 @@ function Footer() {
             />
           </div>
 
-          {/* ================= SOCIAL + NEWSLETTER ================= */}
           <div>
             <h3 className="text-titulos text-xl sm:text-2xl playfairbold mb-4">
               Sígueme
             </h3>
 
-            <div className="flex justify-center gap-6 text-lg mb-6">
+            <div className="flex justify-center gap-6 text-lg ">
               <a
                 href="https://www.instagram.com/manoentonadafaceyoga?igsh=MTVrdms4d2RoMWl3bA=="
                 target="_blank"
@@ -84,42 +81,10 @@ function Footer() {
                 <FiFacebook size={24} className="text-enlace" />
               </a>
             </div>
-
-            <div className="mt-6">
-              <h3 className="text-titulos text-lg sm:text-xl playfairbold mb-4">
-                Suscríbete al newsletter
-              </h3>
-
-              <form className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  className="
-                    px-4 py-2 rounded-xl
-                    text-gray-600 border-2 border-teal-600
-                    w-full sm:w-auto
-                    focus:outline-none focus:ring-2 focus:ring-teal-400
-                  "
-                />
-
-                <button
-                  type="submit"
-                  className="
-                    px-6 py-2 rounded-xl
-                    bg-secundario text-enlace gilda text-lg font-semibold
-                    hover:bg-secundario/80 transition
-                    w-full sm:w-auto
-                  "
-                >
-                  Enviar
-                </button>
-              </form>
-            </div>
           </div>
         </div>
 
-        {/* ================= COPYRIGHT ================= */}
-        <div className="w-full text-center playfairbold mt-12 text-titulos text-sm sm:text-base">
+        <div className="w-full text-center playfairbold  text-titulos text-sm sm:text-base">
           © {new Date().getFullYear()} Mano Entonada — Todos los derechos
           reservados.
         </div>
