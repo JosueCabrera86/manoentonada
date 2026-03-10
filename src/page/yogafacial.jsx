@@ -139,8 +139,8 @@ function YogaFacial() {
             </span>
 
             <h2 className="text-2xl md:text-3xl font-serif italic text-gray-800 mb-6">
-              "¿A poco esto sirve de algo? "ufff” ¿todo eso voy a hacer? "¿no es
-              muy ridículo ésto?”
+              "¿Esto sirve de algo? "ufff” ¿todo eso voy a hacer? "¿no es muy
+              ridículo ésto?”
             </h2>
 
             <div className="space-y-4 text-gray-700 leading-relaxed font-light">

@@ -62,12 +62,7 @@ Rutina Masculina.`}
   ];
   return (
     <div>
-      <div className="bg-divisiones text-center py-10 md:py-12 px-4">
-        <p className="cormorant font-bold text-3xl sm:text-4xl md:text-5xl text-zinc-900 italic tracking-wide">
-          Acerca de mi
-        </p>
-      </div>
-      <section id="skills" className="bg-about">
+      <section id="skills" className="bg-manoentonada">
         {skills.map((skill) => (
           <Informacion
             titulo={skill.titulo}

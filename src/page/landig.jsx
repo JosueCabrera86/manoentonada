@@ -11,7 +11,6 @@ function Landig() {
       <ManoEntonada />
       <Servicios />
       <Opiniones />
-      <AboutMe />
       <Contacto />
     </div>
   );

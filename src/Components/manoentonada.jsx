@@ -1,33 +1,21 @@
 import React from "react";
 import Informacion from "./informacion";
 import Hero from "./hero";
+import AboutMe from "./aboutMe";
 
 function ManoEntonada() {
   const datos = [
     {
       texto:
         "Mano Entonada Azul (Ho Manik- Kin 187) es el sello de nacimiento según el calendario maya para Eugenia – dejando florecer la faceta como masoterapeuta, reikista y profesora de yoga facial – este símbolo trae curación para todo el clan, nuestro colectivo y la comunidad a la que pertenecemos.",
-      imagen: "piedras",
-      reverse: false,
-    },
-    {
-      texto:
-        "En la misión del día KIN 187 se descubre que el poder está en las propias manos. La mano simboliza la oportunidad de sanar; lo entonado se refiere a la buena canalización de la energía para que el propósito sea materializado; y el azul representa en el calendario maya a la raza que es de la tribu 7 (siete): la transformadora.",
       imagen: "flor",
-      reverse: true,
-    },
-    {
-      texto:
-        "El Tono 5 (Entonado) propone mejorar el propio potencial. A través de la realización, de la concreción, se puede llegar aún más profundo a los sueños, y a la propia abundancia. Nos anima a ser quienes somos. Nos anima a ser nosotros mismos. Conectamos con nuestra intuición y hacemos. Una mano dormida, planificaría sin hacer nada o sería impaciente y se dejaría ganar por la ansiedad.",
-      notas: "Fuente: Infinito Humano: Sabiduría Maya; Con Las Alas del Alma",
-      imagen: "cuenco",
       reverse: false,
     },
   ];
   const hero = [
     {
       imagen: "cuenco",
-      titulo: "Mano entonada",
+      titulo: "Mano Entonada",
       subtitulo: "El arte de pausar: regalarse un momento de conexión",
     },
   ];
@@ -57,6 +45,7 @@ function ManoEntonada() {
           />
         ))}
       </section>
+      <AboutMe />
     </div>
   );
 }
