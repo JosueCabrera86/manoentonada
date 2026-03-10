@@ -138,9 +138,8 @@ function YogaFacial() {
               Nota de Eugenia para quienes recién se inician en esta práctica:
             </span>
 
-            <h2 className="text-2xl md:text-3xl font-serif italic text-gray-800 mb-6">
-              "¿Esto sirve de algo? "ufff” ¿todo eso voy a hacer? "¿no es muy
-              ridículo ésto?”
+            <h2 className="text-xl md:text-2xl font-serif italic text-gray-800 mb-6">
+              "¿De qué nos servirá ésto?{" "}
             </h2>
 
             <div className="space-y-4 text-gray-700 leading-relaxed font-light">
@@ -183,11 +182,7 @@ function YogaFacial() {
                 En mi caso fue haciendo que incorpore la práctica del yoga
                 facial a mi vida cotidiana.
               </p>
-              <p className="pt-4 text-sm font-semibold italic text-gray-500">
-                Eugenia de Combi - Mano Entonada es Maestra Certificada en Face
-                Yoga por SFY, con especializaciones en Rutina Personalizada,
-                Rutina Avanzada y Rutina Masculina.
-              </p>
+
               <div className="mt-8 flex flex-col items-center gap-4">
                 <Link to="/#contacto">
                   <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300  hover:shadow-lg transform hover:-translate-y-1 active:scale-95  tracking-wider text-sm">
