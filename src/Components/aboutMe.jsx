@@ -42,7 +42,7 @@ function AboutMe() {
     {
       titulo: "Eugenia de Combi",
       subtitulo:
-        "Eugenia es Reikista, masoterapeuta y Maestra certificada en Face Yoga por SFY",
+        "Nacida en Buenos Aires en 1978 hizo experiencia en Argentina y México. Obtiene la Lic. en Relaciones Públicas e Institucionales, es productora, actriz, y se desempeña también como Reikista, Masoterapeuta y Maestra certificada en Face Yoga por SFY",
       texto: (
         <>
           <p className="mb-4">
