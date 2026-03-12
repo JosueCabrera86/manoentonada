@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contacto = () => {
+  const captchaRef = useRef(null);
+
   const [formData, setFormData] = useState({
     nombre: "",
     mail: "",
@@ -8,14 +12,61 @@ const Contacto = () => {
     mensaje: "",
   });
 
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
+  // null | "success" | "error"
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleCaptcha = (value) => {
+    setCaptchaValue(value);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos enviados:", formData);
-    // Aquí puedes agregar la lógica para enviar el mail
+
+    if (!captchaValue) {
+      setStatus("error");
+      return;
+    }
+
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      await emailjs.send(
+        "service_5zz0z1a",
+        "template_9v8s968",
+        {
+          nombre: formData.nombre,
+          mail: formData.mail,
+          subject: formData.subject,
+          mensaje: formData.mensaje,
+        },
+        "SYgw9dgbQc0l2ctp2",
+      );
+
+      setStatus("success");
+
+      setFormData({
+        nombre: "",
+        mail: "",
+        subject: "",
+        mensaje: "",
+      });
+
+      captchaRef.current.reset();
+      setCaptchaValue(null);
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -36,47 +87,76 @@ const Contacto = () => {
               placeholder="Nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full p-3 rounded-2xl bg-divisiones border-none focus:ring-2 focus:ring-[#7A8BB2] outline-none placeholder-zinc-500"
+              className="w-full p-3 rounded-2xl bg-divisiones"
               required
             />
+
             <input
               type="email"
               name="mail"
               placeholder="Mail"
               value={formData.mail}
               onChange={handleChange}
-              className="w-full p-3 rounded-2xl bg-divisiones border-none focus:ring-2 focus:ring-[#7A8BB2] outline-none placeholder-zinc-500"
+              className="w-full p-3 rounded-2xl bg-divisiones"
               required
-            />{" "}
+            />
+
             <input
-              type="subject"
+              type="text"
               name="subject"
               placeholder="Asunto"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full p-3 rounded-2xl bg-divisiones border-none focus:ring-2 focus:ring-[#7A8BB2] outline-none placeholder-zinc-500"
+              className="w-full p-3 rounded-2xl bg-divisiones"
               required
             />
           </div>
 
-          <div className="h-full">
+          <div>
             <textarea
               name="mensaje"
               placeholder="Mensaje"
               value={formData.mensaje}
               onChange={handleChange}
-              className="w-full h-[174px] p-4 rounded-2xl bg-divisiones border-none focus:ring-2 focus:ring-[#7A8BB2] outline-none placeholder-zinc-500 resize-none"
+              className="w-full h-[174px] p-4 rounded-2xl bg-divisiones resize-none"
               required
             />
           </div>
         </div>
 
+        {/* CAPTCHA */}
+
+        <div className="flex justify-center mt-6">
+          <ReCAPTCHA
+            sitekey="6Le7h4gsAAAAADJWeIneQ0vJjj7lMYlTyYHj1FDc"
+            onChange={handleCaptcha}
+            ref={captchaRef}
+          />
+        </div>
+
+        {/* MENSAJES */}
+
+        {status === "success" && (
+          <p className="text-green-600 text-center mt-4">
+            ✓ Mensaje enviado correctamente
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="text-red-600 text-center mt-4">
+            Hubo un error o falta verificar el captcha
+          </p>
+        )}
+
+        {/* BOTON */}
+
         <div className="flex justify-center mt-8">
           <button
             type="submit"
-            className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300  hover:shadow-lg transform hover:-translate-y-1 active:scale-95  tracking-wider text-sm"
+            disabled={loading}
+            className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 disabled:opacity-50"
           >
-            Enviar
+            {loading ? "Enviando..." : "Enviar"}
           </button>
         </div>
       </form>
