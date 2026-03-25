@@ -29,7 +29,7 @@ function Servicios() {
       titulo: "Reiki",
       subtitulo: "Canalización de Energía Vital",
       texto:
-        "Cual manos con un buen tono, y al servicio de ser puente, la energía universal fluye con propósito a través del ser. El reiki es una herramienta para armonizar los centros energéticos a través de su canalización. En este espacio de paz, la vibración de la transformación trabaja en tus capas más sutiles, disolviendo bloqueos y recordándote que el poder de sanar reside, fundamentalmente, en la apertura de tu propio espíritu.",
+        "El reiki es una herramienta para armonizar los centros energéticos a través de su canalización. En este espacio de paz, la vibración de la transformación trabaja en tus capas más sutiles, disolviendo bloqueos y recordándote que el poder de sanar reside, fundamentalmente, en la apertura de tu propio espíritu. La energía universal fluye con propósito a través del ser gracias a unas manos de buen tono que están el servicio de ser puente.",
       imagen: "reiki",
       reverse: false,
       showLink: true,
