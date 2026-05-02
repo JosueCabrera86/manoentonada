@@ -45,7 +45,9 @@ function PoliticaDePrivacidad() {
           <br />
           <strong> Seguridad: </strong> <br />
           Como desarrolladores (DidascaliaDev), implementamos las mejores
-          prácticas para asegurar que tu experiencia sea segura.
+          prácticas para asegurar que tu experiencia sea segura. Recopilamos
+          datos de diagnóstico y fallos de manera anónima y efímera para mejorar
+          la estabilidad de la aplicación
           <br />
           <strong>Control de tu Información:</strong> <br />
           Como usuario, tienes derecho a acceder, rectificar o eliminar tu
