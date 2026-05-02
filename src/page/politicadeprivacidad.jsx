@@ -32,8 +32,11 @@ function PoliticaDePrivacidad() {
           para: Gestionar tu acceso seguro a la plataforma. Personalizar tu
           progreso en las rutinas de yoga facial y bienestar. Enviarte
           notificaciones críticas sobre tus sesiones o actualizaciones del
-          material. No compartimos tu correo con terceros ni lo utilizamos para
-          fines publicitarios ajenos a Mano Entonada sin tu consentimiento.
+          material. Cualquier dato procesado para la personalización de la
+          experiencia de usuario se maneja de forma efímera siempre que no se
+          requiera almacenamiento para fines de autenticación o seguridad No
+          compartimos tu correo con terceros ni lo utilizamos para fines
+          publicitarios ajenos a Mano Entonada sin tu consentimiento.
           <br />
           <strong> Uso de la Cámara:</strong> <br /> En el caso de las sesiones
           en vivo, la cámara se activa únicamente para dar seguimiento a tus
