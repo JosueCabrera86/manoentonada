@@ -88,5 +88,3 @@ function Servicios() {
     </div>
   );
 }
-
-export default Servicios;

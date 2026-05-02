@@ -9,6 +9,7 @@ import ScrollToHash from "./Components/scrollToHash";
 import "./index.css";
 import Dashboard from "./page/admin/dashboard";
 import Panel from "./page/admin/panel";
+import PolitcaDePrivacidad from "./page/politicadeprivacidad"
 import Suscriptores from "./page/suscriptores";
 import ProtectedRoute from "./Components/protectedRoute";
 
@@ -41,6 +42,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+           <Route path="/politicas" element={<PolitcaDePrivacidad />} />
       </Routes>
       <Footer />
     </>

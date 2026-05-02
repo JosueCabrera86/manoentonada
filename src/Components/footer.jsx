@@ -38,6 +38,11 @@ function Footer() {
                   Contacto
                 </a>
               </li>
+              <li>
+                <a href="/politicas" className="hover:text-white transition">
+                  Politica de Privacidad
+                </a>
+              </li>
             </ul>
           </div>
 
