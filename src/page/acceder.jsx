@@ -38,8 +38,7 @@ const Acceder = () => {
     setLoading(true);
 
     try {
-      // 1️⃣ LOGIN
-      const { data: authData, error: authError } =
+     const { data: authData, error: authError } =
         await supabase.auth.signInWithPassword({
           email: email.trim(),
           password,
@@ -52,10 +51,10 @@ const Acceder = () => {
 
       const authUser = authData.user;
 
-      // Guardar token
+
       sessionStorage.setItem("token", authData.session.access_token);
 
-      // 2️⃣ OBTENER PERFIL
+
       const { data: profile, error: profileError } = await supabase
         .from("users")
         .select("*")
@@ -67,13 +66,13 @@ const Acceder = () => {
         return;
       }
 
-      // 3️⃣ Guardar datos del usuario
+      
       sessionStorage.setItem("user_id", profile.id);
       sessionStorage.setItem("user_email", authUser.email);
       sessionStorage.setItem("user_categoria", profile.categoria);
       sessionStorage.setItem("user_rol", profile.rol);
 
-      // 4️⃣ Redirección única
+      
       navigate("/suscriptores");
     } catch (err) {
       console.error("Error login:", err);
@@ -107,9 +106,9 @@ const Acceder = () => {
             </p>
           </div>
 
-          {/* Form */}
+          
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email */}
+            
             <div>
               <label className="text-sm font-medium text-[#4B5320] ml-1 mb-1 block">
                 Correo electrónico

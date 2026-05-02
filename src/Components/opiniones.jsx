@@ -40,7 +40,6 @@ const Opiniones = () => {
                      hover:shadow-md transition-all duration-300 
                      flex flex-col items-center text-center"
             >
-              {/* Imagen */}
               <div
                 className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 rounded-full mb-4 
                           overflow-hidden border-2 border-[#b5c7b9]"
@@ -52,17 +51,14 @@ const Opiniones = () => {
                 />
               </div>
 
-              {/* Nombre */}
               <h3 className="font-semibold text-gray-800 italic text-base sm:text-lg">
                 {item.name}
               </h3>
 
-              {/* Rol */}
               <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-400 mb-4">
                 {item.role}
               </p>
 
-              {/* Texto */}
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed italic">
                 "{item.text}"
               </p>

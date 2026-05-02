@@ -19,7 +19,7 @@ function ProtectedRoute({ children, tipo }) {
 
         const email = session.user.email;
 
-        // Traemos rol del usuario
+        
         const { data: userRow, error } = await supabase
           .from("users")
           .select("rol")
@@ -35,19 +35,19 @@ function ProtectedRoute({ children, tipo }) {
 
         console.log("DEBUG ProtectedRoute:", { rol });
 
-        // Siempre permitir admin
+        
         if (rol === "admin") {
           setAllowed(true);
           return;
         }
 
-        // Verificar rol para tipo
+        
         if (tipo && rol === tipo.toLowerCase()) {
           setAllowed(true);
           return;
         }
 
-        // Si no cumple nada, denegar
+        
         setAllowed(false);
       } catch (err) {
         console.error("ProtectedRoute error:", err);
@@ -58,13 +58,12 @@ function ProtectedRoute({ children, tipo }) {
     verify();
   }, [tipo]);
 
-  // Mientras verificamos la sesión
+  
   if (allowed === null) return <p>Cargando...</p>;
 
-  // Si no tiene permiso → redirigir a login o landing
   if (!allowed) return <Navigate to="/acceder" replace />;
 
-  // Si todo ok → renderiza children
+ 
   return children;
 }
 
