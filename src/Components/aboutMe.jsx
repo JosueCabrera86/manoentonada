@@ -41,12 +41,13 @@ function AboutMe() {
   const skills = [
     {
       titulo: "Eugenia de Combi",
-      subtitulo:
-        "Nacida en Buenos Aires en 1978 hizo experiencia en Argentina y México. Obtiene la Lic. en Relaciones Públicas e Institucionales, es productora, actriz, y se desempeña también como Reikista, Masoterapeuta y Maestra certificada en Face Yoga por SFY",
+      subtitulo: "Masoterapeuta holística, reikista y maestra de yoga facial.",
       texto: (
         <>
           <p className="mb-4">
-            Certificada además en las siguientes especialidades de SFY:
+            También es actriz, productora y licenciada en relaciones públicas e
+            institucionales. En Yoga facial se certica en las siguientes
+            especialidades de SFY:
           </p>
 
           <ListaConIcono
@@ -59,9 +60,20 @@ Rutina Masculina.`}
       imagen: "eugenia1",
       reverse: true,
     },
+    {
+      texto:
+        "Mano Entonada Azul (Ho Manik- Kin 187) es el sello de nacimiento según el calendario maya para Eugenia – dejando florecer la faceta como masoterapeuta, reikista y profesora de yoga facial – este símbolo trae curación para todo el clan, nuestro colectivo y la comunidad a la que pertenecemos.",
+      imagen: "flor",
+      reverse: false,
+    },
   ];
   return (
     <div>
+      <div className="bg-divisiones text-center py-10 md:py-12 px-4">
+        <p className="cormorant text-xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-900 italic leading-relaxed max-w-4xl mx-auto">
+          ¿De quién son estas manos entonadas?
+        </p>
+      </div>
       <section id="skills" className="bg-manoentonada">
         {skills.map((skill) => (
           <Informacion
@@ -73,6 +85,21 @@ Rutina Masculina.`}
           />
         ))}
       </section>
+      <div className="bg-divisiones py-12 md:py-16 px-4 text-center">
+        <p className="cormorant font-bold text-2xl sm:text-3xl md:text-4xl text-zinc-800 italic mb-6 leading-snug max-w-3xl mx-auto">
+          Si tienes dudas o necesitas más información, no dudes en contactarme.
+        </p>
+
+        <a
+          href="#contacto"
+          className="gilda text-base sm:text-lg md:text-xl text-emerald-900 
+               
+               hover:text-emerald-800 
+               transition-colors duration-300"
+        >
+          Escribe para encontrar lo más adecuado a tu circunstancia actual →
+        </a>
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ const testimonials = [
   {
     id: 1,
     imagen: "ariel",
-    name: "Ariel Martínez Herrera.",
+    name: "Ariel Martínez Herrera",
     role: "Cineasta",
     text: "Tuve una sesión de reiki muy hermosa, que me conectó con imágenes muy profundas y me ayudó a verme a mi mismo desde un lugar de belleza y calma. Muy recomendado.",
   },

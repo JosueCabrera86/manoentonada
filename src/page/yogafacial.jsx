@@ -50,7 +50,7 @@ function YogaFacial() {
     {
       titulo: "Nuestra Práctica",
       texto:
-        'Te ayuda a conectar contigo mismo, a gestionar tus emociones y a tener una presencia más consciente en el mundo. No es solo para mujeres o para la "eterna juventud"; está pensado para hombres y mujeres de todas las edades que busquen bienestar y romper con los estereotipos de belleza impuestos. Se enfoca en la relajación, la postura y la tonificación de los músculos faciales, mejorando la circulación y reduciendo líneas de expresión. Es una herramienta poderosa para el autocuidado y para redescubrir tu belleza natural y única, esa que va más allá de los cánones, es una práctica integral que va más allá de lo estético, abordando aspectos físicos, de respiración y de la expresión consciente de la sonrisa.',
+        "Se enfoca en la relajación, la postura y la tonificación de los músculos faciales, mejorando la circulación y reduciendo líneas de expresión o asimetrías. Es una herramienta poderosa de autocuidado para redescubrir tu belleza natural y única, esa que va más allá de los cánones estéticos o los estereotipos impuestos. Es una práctica integral que - a través de la respiración y la expresión consciente de la sonrisa - te conecta con el momento presente. Está pensado para hombres y mujeres de todas las edades que busquen estar bien. Te ayuda a conectar contigo mismo/a, a gestionar tus emociones y a tener una presencia más consciente en el mundo.",
       imagen: "yogaf4",
       reverse: true,
     },
@@ -60,7 +60,7 @@ function YogaFacial() {
       texto: (
         <ListaConIcono
           texto={`Conexión y autoconciencia: Permite un espacio de reconexión profunda con uno mismo, fomentando el autocuidado consciente y la modificación voluntaria de gestos faciales para influir positivamente en el estado anímico.
-           Gestión emocional: Ayuda a expresar emociones de forma consciente, evitando que las tensiones o conflictos acumulados en el rostro tomen el control de nuestra impronta.`}
+           Gestión emocional: Ayuda a expresar emociones de forma consciente, evitando que las tensiones o conflictos acumulados en el rostro tomen el control de nuestra expresión.`}
         />
       ),
       imagen: "yogaf1",
@@ -105,8 +105,8 @@ function YogaFacial() {
                 max-w-4xl mx-auto"
         >
           El Yoga Facial es más que una rutina estética. Es una disciplina
-          holística para el rostro que combina movimiento, respiración y
-          alegría.
+          holística para el rostro que involucra respiración, movimiento y
+          conciencia facial
         </p>
       </div>
 
@@ -121,87 +121,27 @@ function YogaFacial() {
           />
         ))}
       </section>
-      <section className="relative w-full py-20 bg-servicios ">
-        <div className="relative max-w-6xl mx-auto h-[600px] overflow-hidden rounded-2xl shadow-xl">
-          <img
-            src="imgmano/nota.png"
-            alt="Reflexión Yoga Facial"
-            className="w-full h-full object-cover"
-          />
+      <section className="bg-servicios py-16">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <p className="cormorant font-bold text-2xl sm:text-3xl md:text-4xl text-zinc-800 italic mb-6 leading-snug max-w-3xl mx-auto">
+            Para ponerse en contacto e iniciar tu camino de bienestar da click
+            en el botón debajo
+          </p>
+          <Link to="/#contacto">
+            <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 active:scale-95 tracking-wider text-sm">
+              Formulario
+            </button>
+          </Link>
 
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
-
-        <div className="relative mt-[-400px] md:mt-[-500px] max-w-3xl mx-auto px-6">
-          <div className="bg-white/85 backdrop-blur-md p-8 md:p-12 rounded-lg shadow-2xl border border-gray-100">
-            <span className="text-sm uppercase tracking-widest text-titulos font-bold mb-4 block">
-              Nota de Eugenia para quienes recién se inician en esta práctica:
-            </span>
-
-            <h2 className="text-xl md:text-2xl font-serif italic text-gray-800 mb-6">
-              "¿De qué nos servirá ésto?{" "}
-            </h2>
-
-            <div className="space-y-4 text-gray-700 leading-relaxed font-light">
-              <p>
-                A veces mi ego no me dejaba hacer mi rutina, me decía a mi
-                misma:
-                <span className="italic"> “ufff ¿todo eso voy a hacer?”</span>.
-                Otro día decía:
-                <span className="italic">
-                  “tantito, más tarde lo hago, ¿no es muy ridículo ésto?”
-                </span>
-                Y otro:
-                <span className="italic">
-                  “va, ¿a poco eso sirve de algo?…”
-                </span>
-                Y más:
-                <span className="italic">
-                  “esos antes y después si no son retocados, son de un día malo
-                  de alguien a un día bueno.”
-                </span>
-              </p>
-              <p className="font-medium text-gray-900 border-l-4 border-l-violet-400 pl-4 py-2">
-                Hasta que dije: <br />
-                – “Sí, mis días buenos los decido yo, <br />– Y hacerlo me hace
-                sentir bien,
-                <br />– Y esos días me amo, me cuido, me dedico tiempo a mi
-                misma, <br />– Y además mi alma se siente más liviana”.
-              </p>
-              <p>
-                Al ego no le gustó nada, ahí anda dando vueltas, refunfuñando,
-                porque tiene una faceta muy negativa y le encanta el drama…
-                <br />
-                Sin embargo, ahí va…poco a poco, cediendo– ya encontrará otra
-                cosas en las cuales oponerse.
-                <br /> Pero sepan que nosotros siempre podemos orientar, desde
-                un lugar superior, espiritual, a nuestro ego. <br />
-                Al menos, así, dice la filosofía del Yoga 😉
-                <br /> Al menos, así, un cambio por día hacía. <br />A veces de
-                un pensamiento, a veces pasar un día en la naturaleza. <br />
-                En mi caso fue haciendo que incorpore la práctica del yoga
-                facial a mi vida cotidiana.
-              </p>
-
-              <div className="mt-8 flex flex-col items-center gap-4">
-                <Link to="/#contacto">
-                  <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300  hover:shadow-lg transform hover:-translate-y-1 active:scale-95  tracking-wider text-sm">
-                    Inicia ahora
-                  </button>
-                </Link>
-
-                <p className="text-xs text-gray-900">
-                  Si ya perteneces a la comunidad, {""}
-                  <Link
-                    to="/acceder"
-                    className="underline text-rose-400 hover:text-[#b5c7b9] transition-colors font-medium"
-                  >
-                    ingresa aquí
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="text-ms md:text-lg text-gray-900">
+            Si ya perteneces a la comunidad,
+            <Link
+              to="/acceder"
+              className="underline text-rose-400 hover:text-[#b5c7b9] transition-colors font-medium"
+            >
+              ingresa aquí
+            </Link>
+          </p>
         </div>
       </section>
     </div>
