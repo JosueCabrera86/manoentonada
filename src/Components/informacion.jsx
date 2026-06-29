@@ -25,17 +25,17 @@ function Informacion({
       ${textOrderClass}
     `}
       >
-        <h1 className="playfairbold font-semibold text-titulos text-2xl sm:text-3xl md:text-4xl mb-4 leading-tight">
+        <h1 className="playfairbold font-semibold text-titulos text-3xl sm:text-3xl md:text-4xl mb-4 leading-tight">
           {titulo}
         </h1>
 
         {subtitulo && (
-          <h2 className="mb-3 text-lg sm:text-xl gilda text-[#4B5320]">
+          <h2 className="mb-3 text-xl sm:text-2xl gilda text-[#4B5320]">
             {subtitulo}
           </h2>
         )}
 
-        <p className="text-base sm:text-lg text-zinc-900 cormorant leading-relaxed max-w-xl">
+        <p className="text-lg sm:text-xl text-zinc-900 cormorant leading-relaxed max-w-xl">
           {texto}
         </p>
 
@@ -49,7 +49,7 @@ function Informacion({
               href={linkUrl}
               onClick={onLinkClick}
               className="
-            gilda text-base sm:text-lg italic
+            gilda text-lg sm:text-xl italic
             text-[#4B5320]
             hover:text-emerald-800
             border-b border-transparent
@@ -64,16 +64,15 @@ function Informacion({
         )}
 
         {notas && (
-          <p className="text-sm mt-8 italic opacity-70 max-w-lg">{notas}</p>
+          <p className="text-lg mt-8 italic opacity-70 max-w-lg">{notas}</p>
         )}
       </div>
 
-      {/* ================= IMAGEN ================= */}
       <div
         className={`
       ${imageOrderClass}
       relative
-      h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px]
+      h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px]
     `}
       >
         <div className="relative w-full h-full">

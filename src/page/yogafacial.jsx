@@ -29,7 +29,7 @@ const ListaConIcono = ({ texto }) => {
               <span className="text-rose-300 ml-1">•</span>
             )}
 
-            <p className="text-lg text-zinc-900 cormorant leading-snug">
+            <p className="text-xl text-zinc-900 cormorant leading-snug">
               {textoFinal}
             </p>
           </li>
@@ -128,12 +128,12 @@ function YogaFacial() {
             en el botón debajo
           </p>
           <Link to="/#contacto">
-            <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 active:scale-95 tracking-wider text-sm">
+            <button className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 active:scale-95 tracking-wider text-lg">
               Formulario
             </button>
           </Link>
 
-          <p className="text-ms md:text-lg text-gray-900">
+          <p className="text-lg md:text-2xl text-gray-900">
             Si ya perteneces a la comunidad,
             <Link
               to="/acceder"

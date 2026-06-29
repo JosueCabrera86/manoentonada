@@ -21,7 +21,7 @@ function ManoEntonada() {
         />
       ))}
       <div className="bg-divisiones text-center py-10 px-6 sm:px-10 md:px-16 lg:px-28">
-        <p className="cormorant text-xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-900 italic leading-relaxed max-w-4xl mx-auto">
+        <p className="cormorant text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-zinc-900 italic leading-relaxed max-w-4xl mx-auto">
           Mano Entonada reúne dones para ofrecer al mundo sanación y bienestar.
         </p>
       </div>

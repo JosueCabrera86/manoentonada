@@ -28,7 +28,7 @@ const Opiniones = () => {
   return (
     <section className="py-16 md:py-20 bg-[#f9f7f5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-light tracking-[0.15em] text-gray-500 mb-12 md:mb-16 playfaire">
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-light tracking-[0.15em] text-gray-500 mb-12 md:mb-16 playfaire">
           Esto opinan quienes han confiado en Mano Entonada
         </h2>
 
@@ -51,15 +51,15 @@ const Opiniones = () => {
                 />
               </div>
 
-              <h3 className="font-semibold text-gray-800 italic text-base sm:text-lg">
+              <h3 className="font-semibold text-gray-800 italic text-lg sm:text-xl">
                 {item.name}
               </h3>
 
-              <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-400 mb-4">
+              <p className="text-[10px] sm:text-[12px] uppercase tracking-widest text-gray-400 mb-4">
                 {item.role}
               </p>
 
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed italic">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed italic">
                 "{item.text}"
               </p>
             </div>

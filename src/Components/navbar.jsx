@@ -42,7 +42,7 @@ function Navbar() {
         <div className="hidden md:flex items-center justify-between mx-4 lg:mx-8">
           {/* Lógica dinámica: Si estoy en Yoga o Acceder, muestro Inicio */}
           <div className="w-1/3 flex justify-start">
-            <ul className="text-xl playfairbold text-white drop-shadow-md">
+            <ul className="text-2xl playfairbold text-white drop-shadow-md">
               <li>
                 {isNotHome ? (
                   <Link
@@ -76,7 +76,7 @@ function Navbar() {
 
           {/* Enlace Derecho */}
           <div className="w-1/3 flex justify-end">
-            <ul className="text-white text-xl playfairbold drop-shadow-md">
+            <ul className="text-white text-2xl playfairbold drop-shadow-md">
               <li>
                 {/* Opcional: Ocultar el link de Acceder si ya estamos ahí para mantener la limpieza */}
                 {location.pathname !== "/acceder" ? (
@@ -98,7 +98,6 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Mobile (Sin cambios según tu solicitud) */}
         <div className="flex md:hidden items-center justify-between">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <img
@@ -117,7 +116,7 @@ function Navbar() {
 
         {isOpen && (
           <div className="mt-4 md:hidden">
-            <ul className="flex flex-col gap-4 text-center font-semibold text-white drop-shadow-md pb-2">
+            <ul className="flex flex-col gap-4 text-center font-semibold text-xl text-white drop-shadow-md pb-2">
               <li>
                 <Link
                   to="/"

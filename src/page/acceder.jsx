@@ -38,7 +38,7 @@ const Acceder = () => {
     setLoading(true);
 
     try {
-     const { data: authData, error: authError } =
+      const { data: authData, error: authError } =
         await supabase.auth.signInWithPassword({
           email: email.trim(),
           password,
@@ -51,9 +51,7 @@ const Acceder = () => {
 
       const authUser = authData.user;
 
-
       sessionStorage.setItem("token", authData.session.access_token);
-
 
       const { data: profile, error: profileError } = await supabase
         .from("users")
@@ -66,13 +64,11 @@ const Acceder = () => {
         return;
       }
 
-      
       sessionStorage.setItem("user_id", profile.id);
       sessionStorage.setItem("user_email", authUser.email);
       sessionStorage.setItem("user_categoria", profile.categoria);
       sessionStorage.setItem("user_rol", profile.rol);
 
-      
       navigate("/suscriptores");
     } catch (err) {
       console.error("Error login:", err);
@@ -91,26 +87,23 @@ const Acceder = () => {
         <div className="absolute inset-0 bg-black/20" />
 
         <div className="bg-yogafacial backdrop-blur-lg p-6 sm:p-8 md:p-12 rounded-3xl shadow-xl border border-white/50 max-w-md w-full relative z-10">
-          {/* Header */}
           <div className="flex flex-col items-center mb-8 text-center">
             <img
               src="/imagenes/logo_manoentonadas.png"
               alt="Logo Mano Entonada"
               className="w-20 sm:w-24 mb-4"
             />
-            <h2 className="playfairbold text-2xl sm:text-3xl text-zinc-800">
+            <h2 className="playfairbold text-3xl sm:text-4xl text-zinc-800">
               Bienvenida
             </h2>
-            <p className="cormorant text-base sm:text-lg text-zinc-600 mt-2">
+            <p className="cormorant text-lg sm:text-xl text-zinc-600 mt-2">
               Inicia sesión en tu espacio de bienestar
             </p>
           </div>
 
-          
           <form onSubmit={handleSubmit} className="space-y-6">
-            
             <div>
-              <label className="text-sm font-medium text-[#4B5320] ml-1 mb-1 block">
+              <label className="text-base font-medium text-[#4B5320] ml-1 mb-1 block">
                 Correo electrónico
               </label>
               <div className="relative group">
@@ -123,7 +116,7 @@ const Acceder = () => {
                 <input
                   type="email"
                   required
-                  className="w-full pl-10 pr-4 py-3 bg-white/60 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-base sm:text-lg"
+                  className="w-full pl-10 pr-4 py-3 bg-white/60 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-lg sm:text-xl"
                   placeholder="tu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -131,9 +124,8 @@ const Acceder = () => {
               </div>
             </div>
 
-            {/* Password */}
             <div>
-              <label className="text-sm font-medium text-[#4B5320] ml-1 mb-1 block">
+              <label className="text-base font-medium text-[#4B5320] ml-1 mb-1 block">
                 Contraseña
               </label>
 
@@ -148,7 +140,7 @@ const Acceder = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   required
-                  className="w-full pl-10 pr-12 py-3 bg-white/60 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-base sm:text-lg"
+                  className="w-full pl-10 pr-12 py-3 bg-white/60 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-[#4B5320] focus:border-emerald-900 outline-none transition-all cormorant text-lg sm:text-xl"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -168,7 +160,6 @@ const Acceder = () => {
               </div>
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               className="w-full bg-[#9eb0a2] text-white font-semibold py-3 rounded-full hover:bg-[#8da092] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:scale-95 mt-4"
@@ -177,8 +168,7 @@ const Acceder = () => {
             </button>
           </form>
 
-          {/* Footer */}
-          <p className="text-center mt-8 text-sm text-zinc-500">
+          <p className="text-center mt-8 text-base text-zinc-500">
             ¿No tienes cuenta aún?{" "}
             <Link
               to="/#contacto"

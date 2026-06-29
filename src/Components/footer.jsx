@@ -51,7 +51,7 @@ function Footer() {
               Mano Entonada
             </h2>
 
-            <p className="mt-2 text-enlace gilda text-base sm:text-lg">
+            <p className="mt-2 text-enlace gilda text-lg sm:text-xl">
               Bienestar, energía y presencia.
             </p>
 
@@ -89,7 +89,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="w-full text-center playfairbold  text-titulos text-sm sm:text-base">
+        <div className="w-full text-center playfairbold  text-titulos text-lg sm:text-lg">
           © {new Date().getFullYear()} Mano Entonada — Todos los derechos
           reservados.
         </div>

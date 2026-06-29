@@ -3,7 +3,6 @@ import React from "react";
 function Hero({ imagen, titulo, subtitulo }) {
   return (
     <div className="relative w-full min-h-[85vh] sm:min-h-screen overflow-hidden">
-      {/* Imagen */}
       <img
         src={`/imgmano/${imagen}.png`}
         alt="imagen de portada"
@@ -18,7 +17,7 @@ function Hero({ imagen, titulo, subtitulo }) {
         <h1
           className="
             playfairbold text-titulos
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+            text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
             leading-tight tracking-wide
             max-w-5xl
           "
@@ -30,7 +29,7 @@ function Hero({ imagen, titulo, subtitulo }) {
           className="
             gilda text-subtitulo
             mt-4
-            text-lg sm:text-xl md:text-2xl lg:text-3xl
+            text-xl sm:text-xl md:text-2xl lg:text-3xl
             tracking-wide
             max-w-3xl
           "
