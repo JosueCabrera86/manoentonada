@@ -9,10 +9,8 @@ function Hero({ imagen, titulo, subtitulo }) {
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Contenido */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 min-h-[85vh] sm:min-h-screen">
         <h1
           className="

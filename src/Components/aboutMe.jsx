@@ -77,7 +77,7 @@ Rutina Masculina.`}
       <section id="skills" className="bg-manoentonada">
         {skills.map((skill, index) => (
           <Informacion
-            key={index} // Se agrega la key correspondiente para evitar advertencias de React
+            key={index}
             titulo={skill.titulo}
             subtitulo={skill.subtitulo}
             texto={skill.texto}
@@ -88,7 +88,7 @@ Rutina Masculina.`}
       </section>
       <div className="bg-divisiones py-12 md:py-16 px-4 text-center">
         <p className="cormorant font-bold text-2xl sm:text-2xl md:text-3xl text-zinc-800 italic mb-6 leading-snug max-w-3xl mx-auto">
-          Si tienes dudas o necesitas más información, no dudes en contactarme.
+          Si necesitas más información, no dudes en contactarme.
         </p>
 
         <a

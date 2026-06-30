@@ -9,7 +9,6 @@ function Navbar() {
   const location = useLocation();
   const { visible, onMouseEnter, onMouseLeave } = useAutoHideNavbar(1500);
 
-  // Definimos si el usuario está en cualquier ruta que no sea el Home
   const isNotHome =
     location.pathname === "/yogafacial" || location.pathname === "/acceder";
 
@@ -28,7 +27,7 @@ function Navbar() {
           fixed z-50 
           w-full max-w-[90%] md:max-w-[80%]
           left-1/2 -translate-x-1/2
-          bg-gradient-to-r from-white/30 via-white/10 to-white/30
+          bg-gradient-to-r from-white/40 via-white/20 to-white/40
           backdrop-blur-xl border border-white/40
           rounded-3xl md:rounded-4xl
           shadow-lg
@@ -38,22 +37,20 @@ function Navbar() {
           ${visible ? "top-2 md:top-4 opacity-100 pointer-events-auto" : "-top-32 opacity-0 pointer-events-none"}
         `}
       >
-        {/* Desktop */}
         <div className="hidden md:flex items-center justify-between mx-4 lg:mx-8">
-          {/* Lógica dinámica: Si estoy en Yoga o Acceder, muestro Inicio */}
           <div className="w-1/3 flex justify-start">
-            <ul className="text-2xl playfairbold text-white drop-shadow-md">
+            <ul className="text-2xl playfairbold text-[#c996ff] drop-shadow-md">
               <li>
                 {isNotHome ? (
                   <Link
-                    className="transition-all duration-200 hover:text-[#c996ff]"
+                    className="transition-all duration-200 hover:texto-[#0d9488]"
                     to="/"
                   >
                     Inicio
                   </Link>
                 ) : (
                   <Link
-                    className="transition-all duration-200 hover:text-[#c996ff]"
+                    className="transition-all duration-200 hover:text-[#0d9488]"
                     to="/yogafacial"
                   >
                     Yoga Facial
@@ -63,7 +60,6 @@ function Navbar() {
             </ul>
           </div>
 
-          {/* Logo Central */}
           <div className="w-1/3 flex justify-center">
             <Link to="/">
               <img
@@ -74,14 +70,12 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Enlace Derecho */}
           <div className="w-1/3 flex justify-end">
-            <ul className="text-white text-2xl playfairbold drop-shadow-md">
+            <ul className="text-[#c996ff] text-2xl playfairbold drop-shadow-md">
               <li>
-                {/* Opcional: Ocultar el link de Acceder si ya estamos ahí para mantener la limpieza */}
                 {location.pathname !== "/acceder" ? (
                   <Link
-                    className="flex items-center gap-2 transition-all duration-200 hover:text-[#c996ff]"
+                    className="flex items-center gap-2 transition-all duration-200 hover:text-[#0d9488]"
                     to="/acceder"
                   >
                     Acceder
@@ -107,7 +101,7 @@ function Navbar() {
             />
           </Link>
           <button
-            className="text-2xl text-white drop-shadow-md"
+            className="text-2xl text-[#c996ff] drop-shadow-md"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
@@ -116,12 +110,12 @@ function Navbar() {
 
         {isOpen && (
           <div className="mt-4 md:hidden">
-            <ul className="flex flex-col gap-4 text-center font-semibold text-xl text-white drop-shadow-md pb-2">
+            <ul className="flex flex-col gap-4 text-center font-semibold text-xl text-[#c996ff] drop-shadow-md pb-2">
               <li>
                 <Link
                   to="/"
                   onClick={() => setIsOpen(false)}
-                  className="transition-all duration-200 hover:text-[#c996ff]"
+                  className="transition-all duration-200 hover:text-[#0d9488]"
                 >
                   Inicio
                 </Link>
@@ -130,7 +124,7 @@ function Navbar() {
                 <Link
                   to="/yogafacial"
                   onClick={() => setIsOpen(false)}
-                  className="transition-all duration-200 hover:text-[#c996ff]"
+                  className="transition-all duration-200 hover:text-[#0d9488]"
                 >
                   Yoga Facial
                 </Link>
@@ -139,7 +133,7 @@ function Navbar() {
                 <Link
                   to="/acceder"
                   onClick={() => setIsOpen(false)}
-                  className="transition-all duration-200 hover:text-[#c996ff]"
+                  className="transition-all duration-200 hover:text-[#0d9488]"
                 >
                   Acceder
                 </Link>
