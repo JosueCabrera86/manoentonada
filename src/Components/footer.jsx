@@ -89,9 +89,20 @@ function Footer() {
           </div>
         </div>
 
-        <div className="w-full text-center playfairbold  text-titulos text-lg sm:text-lg">
+        <div className="w-full text-center playfairbold  text-titulos text-lg md:text-2xl sm:text-xl">
           © {new Date().getFullYear()} Mano Entonada — Todos los derechos
           reservados.
+        </div>
+        <div className="w-full text-center cormorant  text-titulos text-base sm:text-lg">
+          Realizado por{" "}
+          <a
+            href="https://didascaliadev.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline transition-all"
+          >
+            DidascaliaDev
+          </a>
         </div>
       </div>
     </footer>
