@@ -51,7 +51,7 @@ function AboutMe() {
           </p>
 
           <ListaConIcono
-            texto={`Rutina personalizada.
+            texto={`Rutina Personalizada.
 Rutina Avanzada.
 Rutina Masculina.`}
           />
