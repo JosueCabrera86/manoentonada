@@ -57,7 +57,7 @@ Rutina Masculina.`}
           />
         </>
       ),
-      imagen: "Euge",
+      imagen: "Eu",
       reverse: true,
     },
     {
