@@ -82,7 +82,7 @@ const Acceder = () => {
     <div>
       <div
         className="relative min-h-screen flex items-center justify-center px-4 py-16 md:py-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/imgmano/login.png')" }}
+        style={{ backgroundImage: "url('/imgmano/login.webp')" }}
       >
         <div className="absolute inset-0 bg-black/20" />
 

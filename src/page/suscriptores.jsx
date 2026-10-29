@@ -161,7 +161,7 @@ function Suscriptores() {
                   }
                 >
                   <img
-                    src="/imgsuscriptores/masajes.jpg"
+                    src="/imgsuscriptores/masajes.webp"
                     alt="Masajes"
                     className="w-full h-48 object-cover object-[center_-100px]"
                   />
@@ -201,7 +201,7 @@ function Suscriptores() {
                   }
                 >
                   <img
-                    src="/imgsuscriptores/rutinas.jpg"
+                    src="/imgsuscriptores/rutinas.webp"
                     alt="Rutinas"
                     className="w-full h-48 object-cover object-[center_-100px]"
                   />
@@ -236,7 +236,7 @@ function Suscriptores() {
                   }
                 >
                   <img
-                    src="/imgsuscriptores/clases.jpg"
+                    src="/imgsuscriptores/clases.webp"
                     alt="Clases extra"
                     className="w-full h-48 object-cover object-[center_-100px]"
                   />

@@ -65,7 +65,7 @@ function Dashboard() {
   return (
     <div
       className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/imgmano/dashboard.png')" }}
+      style={{ backgroundImage: "url('/imgmano/dashboard.webp')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />

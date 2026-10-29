@@ -4,7 +4,7 @@ function Hero({ imagen, titulo, subtitulo }) {
   return (
     <div className="relative w-full min-h-[85vh] sm:min-h-screen overflow-hidden">
       <img
-        src={`/imgmano/${imagen}.png`}
+        src={`/imgmano/${imagen}.webp`}
         alt="imagen de portada"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />

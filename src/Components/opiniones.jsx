@@ -45,7 +45,7 @@ const Opiniones = () => {
                           overflow-hidden border-2 border-[#b5c7b9]"
               >
                 <img
-                  src={`/imgopiniones/${item.imagen}.jpg`}
+                  src={`/imgopiniones/${item.imagen}.webp`}
                   alt={item.name}
                   className="w-full h-full object-cover"
                 />

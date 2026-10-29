@@ -77,7 +77,7 @@ function Informacion({
       >
         <div className="relative w-full h-full">
           <img
-            src={`/imgmano/${imagen}.png`}
+            src={`/imgmano/${imagen}.webp`}
             alt={`Imagen de ${imagen}`}
             className="w-full h-full object-cover"
           />
