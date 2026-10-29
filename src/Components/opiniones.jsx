@@ -55,7 +55,7 @@ const Opiniones = () => {
                 {item.name}
               </h3>
 
-              <p className="text-[10px] sm:text-[12px] uppercase tracking-widest text-gray-400 mb-4">
+              <p className="text-[10px] sm:text-[12px] uppercase tracking-widest text-gray-600 mb-4">
                 {item.role}
               </p>
 

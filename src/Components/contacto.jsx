@@ -196,7 +196,7 @@ const Contacto = () => {
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#9eb0a2] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 disabled:opacity-50"
+            className="bg-[#9eb0a2] text-[#243b30] font-bold py-3 px-8 rounded-full transition-all duration-300 disabled:opacity-50"
           >
             {loading ? "Enviando..." : "Enviar"}
           </button>
