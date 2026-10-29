@@ -1,9 +1,13 @@
-import React, { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
+
+import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
+
+const ReCAPTCHA = lazy(() => import("react-google-recaptcha"));
 
 const Contacto = () => {
   const captchaRef = useRef(null);
+  const captchaContainerRef = useRef(null);
+
+  const [mostrarCaptcha, setMostrarCaptcha] = useState(false);
 
   const [formData, setFormData] = useState({
     nombre: "",
@@ -13,13 +17,42 @@ const Contacto = () => {
   });
 
   const [captchaValue, setCaptchaValue] = useState(null);
-
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
-  // null | "success" | "error"
+
+  useEffect(() => {
+    const elemento = captchaContainerRef.current;
+
+    if (!elemento) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setMostrarCaptcha(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMostrarCaptcha(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: "400px 0px",
+        threshold: 0,
+      }
+    );
+
+    observer.observe(elemento);
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleCaptcha = (value) => {
@@ -38,6 +71,8 @@ const Contacto = () => {
     setStatus(null);
 
     try {
+      const { default: emailjs } = await import("@emailjs/browser");
+
       await emailjs.send(
         "service_5zz0z1a",
         "template_9v8s968",
@@ -47,7 +82,7 @@ const Contacto = () => {
           subject: formData.subject,
           mensaje: formData.mensaje,
         },
-        "SYgw9dgbQc0l2ctp2",
+        "SYgw9dgbQc0l2ctp2"
       );
 
       setStatus("success");
@@ -59,14 +94,14 @@ const Contacto = () => {
         mensaje: "",
       });
 
-      captchaRef.current.reset();
+      captchaRef.current?.reset();
       setCaptchaValue(null);
     } catch (error) {
       console.error(error);
       setStatus("error");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -124,14 +159,21 @@ const Contacto = () => {
           </div>
         </div>
 
-        {/* CAPTCHA */}
+        {/* CAPTCHA CON CARGA DIFERIDA */}
 
-        <div className="flex justify-center mt-6">
-          <ReCAPTCHA
-            sitekey="6Le7h4gsAAAAADJWeIneQ0vJjj7lMYlTyYHj1FDc"
-            onChange={handleCaptcha}
-            ref={captchaRef}
-          />
+        <div
+          ref={captchaContainerRef}
+          className="flex justify-center mt-6 min-h-[78px]"
+        >
+          {mostrarCaptcha && (
+            <Suspense fallback={null}>
+              <ReCAPTCHA
+                sitekey="6Le7h4gsAAAAADJWeIneQ0vJjj7lMYlTyYHj1FDc"
+                onChange={handleCaptcha}
+                ref={captchaRef}
+              />
+            </Suspense>
+          )}
         </div>
 
         {/* MENSAJES */}
@@ -148,7 +190,7 @@ const Contacto = () => {
           </p>
         )}
 
-        {/* BOTON */}
+        {/* BOTÓN */}
 
         <div className="flex justify-center mt-8">
           <button
