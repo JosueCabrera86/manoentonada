@@ -6,6 +6,9 @@ function Hero({ imagen, titulo, subtitulo }) {
       <img
         src={`/imgmano/${imagen}.webp`}
         alt="imagen de portada"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 

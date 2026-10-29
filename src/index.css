@@ -70,47 +70,47 @@ body {
 
 @font-face {
   font-family: "Figtree";
-  src: url("/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Figtree-VariableFont_wght.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Lora";
-  src: url("/fonts/lora/Lora-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Lora-VariableFont_wght.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AbrilFatface";
-  src: url("/fonts/Abril-Fatface-Regular.ttf") format("truetype");
+  src: url("/fonts/Abril-Fatface-Regular.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Playfair";
-  src: url("/fonts/Playfair-Regular.ttf") format("truetype");
+  src: url("/fonts/Playfair-Regular.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Playfair-bold";
-  src: url("/fonts/Playfair-SemiBoldItalic.ttf") format("truetype");
+  src: url("/fonts/Playfair-SemiBoldItalic.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilda";
-  src: url("/fonts/GildaDisplay-Regular.ttf") format("truetype");
+  src: url("/fonts/GildaDisplay-Regular.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
 @font-face {
   font-family: "CormorantGaramont";
-  src: url("/fonts/CormorantGaramont-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/CormorantGaramond-VariableFont_wght.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }

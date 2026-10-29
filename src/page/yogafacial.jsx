@@ -123,7 +123,7 @@ function YogaFacial() {
       </section>
       <section className="bg-servicios py-16">
         <div className="flex flex-col items-center gap-4 text-center">
-          <p className="cormorant font-bold text-2xl sm:text-3xl md:text-4xl text-zinc-800 italic mb-6 leading-snug max-w-3xl mx-auto">
+          <p className="cormorant font-bold text-xl sm:text-2xl md:text-2xl lg:text-3xl text-zinc-800 italic mb-6 leading-snug max-w-3xl mx-auto">
             Para ponerse en contacto e iniciar tu camino de bienestar da click
             en el botón debajo
           </p>
@@ -133,7 +133,7 @@ function YogaFacial() {
             </button>
           </Link>
 
-          <p className="text-lg md:text-2xl text-gray-900">
+          <p className="text-lg md:text-xl text-gray-900 mt-6">
             Si ya perteneces a la comunidad,
             <Link
               to="/acceder"
