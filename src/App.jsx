@@ -1,7 +1,7 @@
 
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import Landig from "./page/landig";
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
 import ScrollToHash from "./Components/scrollToHash";
@@ -10,7 +10,7 @@ import ProtectedRoute from "./Components/protectedRoute";
 import "./index.css";
 
 // Carga diferida de páginas
-const Landig = lazy(() => import("./page/landig"));
+
 const YogaFacial = lazy(() => import("./page/yogafacial"));
 const Acceder = lazy(() => import("./page/acceder"));
 const Dashboard = lazy(() => import("./page/admin/dashboard"));
