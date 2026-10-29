@@ -67,25 +67,29 @@ function Footer() {
               Sígueme
             </h3>
 
-            <div className="flex justify-center gap-6 text-lg ">
+            
+              <div className="flex justify-center gap-6 text-lg ">
               <a
                 href="https://www.instagram.com/manoentonadafaceyoga?igsh=MTVrdms4d2RoMWl3bA=="
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visitar Instagram de Mano Entonada"
                 className="hover:scale-110 transition"
-              >
-                <FiInstagram size={24} className="text-enlace" />
-              </a>
+               >
+                <FiInstagram size={24} className="text-enlace" aria-hidden="true" />
+               </a>
 
               <a
                 href="https://www.facebook.com/ManoEntonadaFaceYoga"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visitar Facebook de Mano Entonada"
                 className="hover:scale-110 transition"
               >
-                <FiFacebook size={24} className="text-enlace" />
+                <FiFacebook size={24} className="text-enlace" aria-hidden="true" />
               </a>
             </div>
+
           </div>
         </div>
 

@@ -100,16 +100,20 @@ function Navbar() {
               className="w-16 h-auto"
             />
           </Link>
-          <button
-            className="text-2xl text-[#c996ff] drop-shadow-md"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
+         <button
+          type="button"
+          className="text-2xl text-[#c996ff] drop-shadow-md"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+          aria-controls="menu-movil"
+         >
+          {isOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+         </button>
         </div>
-
+        
         {isOpen && (
-          <div className="mt-4 md:hidden">
+          <div id="menu-movil" className="mt-4 md:hidden">
             <ul className="flex flex-col gap-4 text-center font-semibold text-xl text-[#c996ff] drop-shadow-md pb-2">
               <li>
                 <Link
